@@ -1,0 +1,29 @@
+User-agent: *
+
+
+Allow: /categories/about/
+
+Allow: /categories/
+
+Allow: /
+
+Allow: /categories/blog/
+
+Allow: /tags/emacs/
+
+Allow: /posts/hello-orgmode/
+
+Allow: /menu/
+
+Allow: /notes/
+
+Allow: /categories/notes/
+
+Allow: /tags/orgmode/
+
+Allow: /posts/
+
+Allow: /tags/
+
+Allow: /categories/web/
+
