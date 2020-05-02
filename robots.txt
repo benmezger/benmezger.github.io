@@ -3,15 +3,15 @@ User-agent: *
 
 Allow: /categories/about/
 
-Allow: /categories/
-
-Allow: /
-
 Allow: /categories/blog/
+
+Allow: /categories/
 
 Allow: /tags/emacs/
 
 Allow: /posts/hello-orgmode/
+
+Allow: /
 
 Allow: /menu/
 
