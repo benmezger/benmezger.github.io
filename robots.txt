@@ -17,6 +17,8 @@ Allow: /tags/
 
 Allow: /posts/writting-a-kernel-part-1/
 
+Allow: /menu/
+
 Allow: /categories/about/
 
 Allow: /tags/emacs/
@@ -24,8 +26,6 @@ Allow: /tags/emacs/
 Allow: /posts/hello-orgmode/
 
 Allow: /
-
-Allow: /menu/
 
 Allow: /notes/
 
