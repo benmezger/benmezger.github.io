@@ -1,11 +1,23 @@
 User-agent: *
 
 
-Allow: /categories/about/
-
 Allow: /categories/blog/
 
+Allow: /tags/c/
+
 Allow: /categories/
+
+Allow: /categories/kernel/
+
+Allow: /posts/
+
+Allow: /tags/riscv/
+
+Allow: /tags/
+
+Allow: /posts/writting-a-kernel-part-1/
+
+Allow: /categories/about/
 
 Allow: /tags/emacs/
 
@@ -20,10 +32,6 @@ Allow: /notes/
 Allow: /categories/notes/
 
 Allow: /tags/orgmode/
-
-Allow: /posts/
-
-Allow: /tags/
 
 Allow: /categories/web/
 
