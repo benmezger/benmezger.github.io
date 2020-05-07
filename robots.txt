@@ -3,17 +3,21 @@ User-agent: *
 
 Allow: /categories/blog/
 
-Allow: /tags/c/
-
 Allow: /categories/
 
-Allow: /categories/kernel/
+Allow: /posts/http-hooks-with-custom-arguments/
 
 Allow: /posts/
 
-Allow: /tags/riscv/
+Allow: /tags/python/
 
 Allow: /tags/
+
+Allow: /tags/c/
+
+Allow: /categories/kernel/
+
+Allow: /tags/riscv/
 
 Allow: /posts/writting-a-kernel-part-1/
 
