@@ -1,11 +1,18 @@
+const cacheName = self.location.pathname
+const pages = [
+
+];
+
 self.addEventListener("install", function (event) {
   self.skipWaiting();
+
+  caches.open(cacheName).then((cache) => {
+    return cache.addAll(pages);
+  });
 });
 
 self.addEventListener("fetch", (event) => {
-  const cacheName = self.location.pathname
   const request = event.request;
-
   if (request.method !== "GET") {
     return;
   }
