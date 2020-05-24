@@ -1,17 +1,23 @@
 User-agent: *
 
 
+Allow: /posts/attaching-jira-issues-to-commits/
+
 Allow: /categories/blog/
 
 Allow: /categories/
 
-Allow: /posts/http-hooks-with-custom-arguments/
+Allow: /tags/git/
 
 Allow: /posts/
 
-Allow: /tags/python/
+Allow: /tags/projects/
 
 Allow: /tags/
+
+Allow: /posts/http-hooks-with-custom-arguments/
+
+Allow: /tags/python/
 
 Allow: /tags/c/
 
