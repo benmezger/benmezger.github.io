@@ -45,3 +45,7 @@ Allow: /tags/orgmode/
 
 Allow: /categories/web/
 
+Allow: /posts/finding-exposed-git-repositories/
+
+Allow: /tags/security/
+
