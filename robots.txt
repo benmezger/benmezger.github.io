@@ -49,3 +49,5 @@ Allow: /posts/finding-exposed-git-repositories/
 
 Allow: /tags/security/
 
+Allow: /posts/notes-on-linux-printk/
+
