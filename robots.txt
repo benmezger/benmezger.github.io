@@ -31,6 +31,10 @@ Allow: /menu/
 
 Allow: /categories/about/
 
+Allow: /books/
+
+Allow: /categories/books/
+
 Allow: /tags/emacs/
 
 Allow: /posts/hello-orgmode/
