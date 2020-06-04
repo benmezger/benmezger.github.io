@@ -1,256 +1,158 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="⚠️ Some notes I wrote and some of them are snippets I copied around the Internet. Unfortunately I don’t have the source for all of them, but I will try to keep this updated.
-Notes that tagged or start with TODO are notes that or I am still working on or that are simply incomplete 😔
-  I have discovered the reason for this code and it’s really quite necessary."><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Notes"><meta property="og:description" content="⚠️ Some notes I wrote and some of them are snippets I copied around the Internet. Unfortunately I don’t have the source for all of them, but I will try to keep this updated.
-Notes that tagged or start with TODO are notes that or I am still working on or that are simply incomplete 😔
-  I have discovered the reason for this code and it’s really quite necessary."><meta property="og:type" content="article"><meta property="og:url" content="https://seds.nl/notes/"><meta property="article:published_time" content="2020-04-25T00:00:00-03:00"><meta property="article:modified_time" content="2020-05-02T03:49:59-03:00"><title>Notes | Ben Mezger</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.1e0eb3177255298ca8fff911a1bcce5591a0c1d23ac2c2ced64d544b0be687ee.css integrity="sha256-Hg6zF3JVKYyo//kRobzOVZGgwdI6wsLO1k1USwvmh+4="><script defer src=/en.search.min.ddbd1690aab772d80b2257c0cc50569fc0994f91131cf7cdf15f8858d0516298.js integrity="sha256-3b0WkKq3ctgLIlfAzFBWn8CZT5ETHPfN8V+IWNBRYpg="></script><script defer src=/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js integrity="sha256-dKi7B/C+6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-138318350-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><link type=text/css rel=stylesheet href=/assets/css/orgmode.css><link type=text/css rel=stylesheet href=/assets/css/custom.css></head><body><input type=checkbox class=hidden id=menu-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/><span>Ben Mezger</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/notes/>Notes</a></li><li><a href=/books/>Books</a></li></ul><ul><li><a href=/posts>Blog</a></li><li><strong>Social</strong><ul><li><a href=https://github.com/benmezger/>Github</a></li><li><a href=https://twitter.com/sys%5Freboot>Twitter</a></li><li><a href=/index.xml>RSS</a></li></ul></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Notes"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://seds.nl/notes/"><meta property="og:updated_time" content="2020-06-04T00:59:20-03:00"><title>Notes | Ben Mezger</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.1e0eb3177255298ca8fff911a1bcce5591a0c1d23ac2c2ced64d544b0be687ee.css integrity="sha256-Hg6zF3JVKYyo//kRobzOVZGgwdI6wsLO1k1USwvmh+4="><script defer src=/en.search.min.59c55bc667572512d341260254854615f260b3fc6170adb750efd3bd7233edcb.js integrity="sha256-WcVbxmdXJRLTQSYCVIVGFfJgs/xhcK23UO/TvXIz7cs="></script><script defer src=/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js integrity="sha256-dKi7B/C+6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-138318350-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=alternate type=application/rss+xml href=https://seds.nl/notes/index.xml title="Ben Mezger"><link type=text/css rel=stylesheet href=/assets/css/orgmode.css><link type=text/css rel=stylesheet href=/assets/css/custom.css></head><body><input type=checkbox class=hidden id=menu-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/><span>Ben Mezger</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/books/>Books</a></li></ul><ul><li><a href=/posts>Blog</a></li><li><a href=/notes>Notes</a></li><li><strong>Social</strong><ul><li><a href=https://github.com/benmezger/>Github</a></li><li><a href=https://twitter.com/sys%5Freboot>Twitter</a></li><li><a href=/index.xml>RSS</a></li></ul></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Notes</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><input type=checkbox class=hidden id=toc-control><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><ul><li><a href=#compilers>Compilers</a><ul><li><a href=#syntax-analysis>Syntax Analysis</a></li><li><a href=#grammar>Grammar</a></li><li><a href=#types-of-parsers>Types of parsers</a></li></ul></li><li><a href=#math><span class="org-todo todo TODO">TODO</span> Math</a><ul><li><a href=#integral-calculus>Integral Calculus</a></li></ul></li><li><a href=#programming-notes>Programming notes</a><ul><li><a href=#c-programming>C programming</a></li><li><a href=#go-programming>Go programming</a></li></ul></li><li><a href=#code-snippets>Code snippets</a><ul><li><a href=#python-run-http-server-locally>Python run HTTP server locally</a></li></ul></li><li><a href=#thesis>Thesis</a><ul><li><a href=#os-kit>OS Kit</a></li><li><a href=#memory-management>Memory management</a></li><li><a href=#understanding-risc-v-stack-pointer>Understanding RISC-V stack pointer</a></li><li><a href=#code>Code</a></li><li><a href=#irc>IRC</a></li><li><a href=#privilege-modes>Privilege modes</a></li></ul></li><li><a href=#books>Books</a><ul><li><a href=#list>List</a></li><li><a href=#mídia-noam-chomsky>*<strong>*Mídia**</strong> - Noam Chomsky</a></li></ul></li><li><a href=#political-thoughts>Political thoughts</a><ul><li><a href=#abortion-should-be-legal-safe-and-rare>Abortion should be legal, safe and rare</a></li></ul></li></ul></li></ul></nav></aside></header><article class=markdown><blockquote class="book-hint warning"><p>⚠️ Some notes I wrote and some of them are snippets I copied around the
-Internet. Unfortunately I don’t have the source for all of them, but I will try
-to keep this updated.</p><p>Notes that tagged or start with <code>TODO</code> are notes that or I am still working
-on or that are simply incomplete 😔</p></blockquote><blockquote><p>I have discovered the reason for this code and it’s really
-quite necessary. Unfortunately this comment block is too short to
-contain it – Fermat</p></blockquote><h2 id=compilers>Compilers</h2><h3 id=syntax-analysis>Syntax Analysis</h3><p>Syntax analysis happens after the Lexical phase, and it is responsible for detecting
-syntax errors.</p><h3 id=grammar>Grammar</h3><p>Be design, computer languages have defined structure of what constitutes a
-valid program. in Python, a program is made up of functions/classes/imports, a
-function requires declarations and/or statements and so on. In C, a valid
-program needs to have a least a function called main, otherwise the GNU’s linker is
-unable to link the program.</p><p>Programmers may define language grammars using the Backus-Naur Form (BNF)
-notation. Defining grammars offer a lot of benefits for the language designer.
-Like code, language grammars may change overtime. For example, one of Python’s
-3.5 new feature was the <a href=https://bugs.python.org/issue24017>support</a> to coroutines with <code>async</code> and <code>await</code> syntax.</p><p>The following <a href=https://github.com/python/cpython/commit/7544508f0245173bff5866aa1598c8f6cce1fc5f#diff-cb0b9d6312c0d67f6d4aa1966766cedd>diff</a> shows some of the changes the developer needed to add
-support for the <code>async</code> before the function definition or allow an <code>async</code>
-function definition to be used as a decorator.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff>diff -r ccac513ee610 Grammar/Grammar
-<span style=color:#f92672>--- a/Grammar/Grammar	Mon Apr 20 21:05:23 2015 +0200
-</span><span style=color:#f92672></span><span style=color:#a6e22e>+++ b/Grammar/Grammar	Mon Apr 20 15:54:06 2015 -0400
-</span><span style=color:#a6e22e></span><span style=color:#75715e>@@ -21,8 +21,11 @@
-</span><span style=color:#75715e></span>
- decorator: &#39;@&#39; dotted_name [ &#39;(&#39; [arglist] &#39;)&#39; ] NEWLINE
- decorators: decorator+
-<span style=color:#f92672>-decorated: decorators (classdef | funcdef)
-</span><span style=color:#f92672>-funcdef: &#39;def&#39; NAME parameters [&#39;-&gt;&#39; test] &#39;:&#39; suite
-</span><span style=color:#f92672></span><span style=color:#a6e22e>+decorated: decorators (classdef | funcdef | async_funcdef)
-</span><span style=color:#a6e22e>+
-</span><span style=color:#a6e22e>+async_funcdef: ASYNC funcdef
-</span><span style=color:#a6e22e>+funcdef: (&#39;def&#39; NAME parameters [&#39;-&gt;&#39; test] &#39;:&#39; suite)
-</span><span style=color:#a6e22e>+
-</span><span style=color:#a6e22e></span> parameters: &#39;(&#39; [typedargslist] &#39;)&#39;
- typedargslist: (tfpdef [&#39;=&#39; test] (&#39;,&#39; tfpdef [&#39;=&#39; test])* [&#39;,&#39;
-        [&#39;*&#39; [tfpdef] (&#39;,&#39; tfpdef [&#39;=&#39; test])* [&#39;,&#39; &#39;**&#39; tfpdef] | &#39;**&#39; tfpdef]]
-<span style=color:#75715e>@@ -37,18 +40,19 @@
-</span><span style=color:#75715e></span> simple_stmt: small_stmt (&#39;;&#39; small_stmt)* [&#39;;&#39;] NEWLINE
- small_stmt: (expr_stmt | del_stmt | pass_stmt | flow_stmt |
-              import_stmt | global_stmt | nonlocal_stmt | assert_stmt)
-</code></pre></div><p>Other than making it easier for the language designer to design the language, it
-allows the grammar to be easily documented and maintained by other language
-designers.</p><p>Some grammars allow parsers (syntax analyzers) to be constructed to determine
-the syntactic structure of the program. By relying on the structured grammar, it
-allows the parsers to be developed more easily and testable.</p><h3 id=types-of-parsers>Types of parsers</h3><p>There are 3 types of parsers we can use to write a syntax parser.</p><ol><li>Universal: this method can parse any grammar</li><li>Top-down: this method builds parse trees from the top (root) to the button (leaves)</li><li>Bottom-up: this method builds parse trees from the button (leaves) to the top (root)</li></ol><p>The last two methods reads the input from left to right and one symbol at a time.</p><p>The top-down and bottom-up are known to be more efficient in production use<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</p><h2 id=math><span class="org-todo todo TODO">TODO</span> Math</h2><h3 id=integral-calculus>Integral Calculus</h3><blockquote><p>These are the two ways we commonly think about definite integrals: they describe
-an accumulation of a quantity, so the entire definite integral gives us the net
-change in that quantity.<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p></blockquote><h4 id=why-integral-calculus>Why Integral Calculus</h4><p>Figure <a href=#org7f4a10d>1</a> represents 2 graphs of <code>y = cos(x)</code>. Let’s say we would
-like to calculate the area of
-<link rel=stylesheet href=/katex/katex.min.css><script defer src=/katex/katex.min.js></script><script defer src=/katex/auto-render.min.js onload=renderMathInElement(document.body);></script><span>\( x_1 \)</span>
-. We could calculate
-the area by aproximation, for example, Graph B is filled with the area we would
-like to calculate, so we could divide this area by equal sections of
-\(\Delta x_n\) from <code>a</code> to <code>b</code> rectangles, then we could calculate the area of
-these rectangles by \(f(x_i) * \Delta x_n\) where \(f\) is the area of each of
-the rectangles. We do this for each rectangle then sum them up: \(\sum_{i=1}^n f(x_i) *
-\Delta x_n\). This will give us an approximation of our area, we could have a
-better approximation by having our \(\Delta x_n\) smaller, but this implies that
-our <code>n</code> becomes bigger and bigger. The smaller \(\Delta x_n\) gets, the more <code>n</code>
-approaches infinity.</p><p>We could use \(\liminf\) of <code>n</code> as <code>n</code> approaches ∞ or \(\Delta x_n\) as it
-gets very small.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gnuplot data-lang=gnuplot><span style=color:#66d9ef>set</span> multiplot layout <span style=color:#ae81ff>1</span><span style=color:#f92672>,</span> <span style=color:#ae81ff>2</span> title <span style=color:#e6db74>&#34;f(x) = -x ** 2 + 4&#34;</span>
-<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>set</span> terminal pngcairo enhanced color size <span style=color:#ae81ff>350</span><span style=color:#f92672>,</span><span style=color:#ae81ff>262</span> font <span style=color:#e6db74>&#34;Verdana,10&#34;</span> persist
-<span style=color:#66d9ef>set</span> <span style=color:#960050;background-color:#1e0010>linetype</span> <span style=color:#960050;background-color:#1e0010>1</span> <span style=color:#960050;background-color:#1e0010>l</span>c rgb <span style=color:#e6db74>&#39;#A3001E&#39;</span>
-<span style=color:#66d9ef>set</span> style fill transparent solid <span style=color:#ae81ff>0.35</span> noborder
-<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>f</span>(x) <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>x <span style=color:#f92672>**</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>4</span>
-<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>set</span> title <span style=color:#e6db74>&#34;A&#34;</span>
-<span style=color:#66d9ef>plot</span> <span style=color:#a6e22e>f</span>(x) with lines linestyle <span style=color:#ae81ff>1</span>
-<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>set</span> title <span style=color:#e6db74>&#34;B&#34;</span>
-<span style=color:#66d9ef>set</span> style fill transparent solid <span style=color:#ae81ff>0.50</span> noborder
-<span style=color:#66d9ef>plot</span> <span style=color:#a6e22e>f</span>(x) fs solid <span style=color:#ae81ff>0.3</span> lc rgb <span style=color:#e6db74>&#39;#A3001E&#39;</span>
-<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>unset</span> multiplot
-</code></pre></div><p><a id=org7f4a10d></a></p><figure><img src=/assets/imgs/graph-example.png></figure><p>The idea of getting better and better approximations is the what constitutes
-Integral Calculus.</p><h2 id=programming-notes>Programming notes</h2><h3 id=c-programming>C programming</h3><h4 id=c-project-architecture-guidelines>C project architecture guidelines</h4><ul><li><p>Functions exposed in the header are like public methods</p><p>Think of each module like a class. The functions you expose in the
-header are like public methods. Only put a function in the header if it
-part of the module’s needed interface.</p></li></ul><ul><li><p>Avoiding circular module dependencies</p><p>Avoid circular module dependencies. Module A and module B should
-not call each other. You can refactor something into a module C to avoid
-that.</p></li></ul><ul><li><p>Operatins within the same module should have a <code>create</code> and <code>delete</code> function interface</p><p>Again, following the C++ pattern, if you have a module that can
-perform the same operations on different instances of data, have a
-create and delete function in your interface that will return a pointer
-to struct that is passed back to other functions. But for the sake of
-encapsulation, return a void pointer in the public interface and cast to
-your struct inside of the module.</p></li></ul><ul><li><p>Avoid module scope variables</p><p>Avoid module-scope variables – the previously described pattern
-will usually do what you need. But if you really need module-scope
-variables, group them under a struct stored in a single module-scope
-variable called “m” or something consistent. Then in your code whenever
-you see “m.variable” you will know at a glance it is one of the
-module-scope structs.</p></li></ul><ul><li><p>Define HEADER name to avoid double including and/or header problems</p><p>To avoid header trouble, put <code>#ifndef MY_HEADER_H</code> <code>#define MY_HEADER_H</code>
-declaration that protects against double including. The header .h file for your
-module, should only contain <code>#includes</code> needed FOR THAT HEADER FILE. The module
-<code>.c</code> file can have more includes needed for the compiling the module, but don’t
-add those includes into the module header file. This will save you from a lot of
-namespace conflicts and order-of-include problems.</p></li></ul><h3 id=go-programming>Go programming</h3><h4 id=packages>Packages</h4><p>In Go, programs start running in package <code>main</code>. Package names are defined by
-the last element of the import path: <code>import math/rand</code> has files which begin
-with the <code>package rand</code>. Packages consists of a bunch of <code>.go</code> files.</p><p>Package identifiers (functions, variables, struct and other data), may be used
-in other packages, with a few exceptions. Go allows only exported identifiers to
-be called after the package import. An exported identifier is any identifier
-which the first character starts in <code>UPPER CASE</code>. Any identifier which starts
-with a <code>lower case</code> letter is not exported.</p><p>Exported identifiers can be thought of <code>public</code> and <code>private</code> we see in other
-languages. This approach allows us to separate public API by using upper case
-character from private logic.</p><p>Private identifier within a package may be referenced within its package.</p><h4 id=functions>Functions</h4><p>A function can have 0 or more arguments. All arguments must be typed: <code>x int, y int</code>, when 2 or consecutives arguments share the same type, arguments may be
-defined as so: <code>x, y int</code>.</p><p>Functions can return 0 or more number of results: <code>return x, y</code>. Function return
-values may be named, and must be defined after the function declaraction and
-before the beginning <code>{</code></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>foobar</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span> <span style=color:#66d9ef>int</span>) (<span style=color:#a6e22e>z</span> <span style=color:#66d9ef>int</span>){
-	<span style=color:#a6e22e>z</span> = <span style=color:#a6e22e>x</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>y</span>
-	<span style=color:#66d9ef>return</span>
-}
-</code></pre></div><p>The empty return will return the z value. Named return values should be used to
-document the meaning of the return values. Named return values should be used on
-short functions, as named values in large functions may become confusing.</p><h4 id=defer>Defer</h4><h2 id=code-snippets>Code snippets</h2><h3 id=python-run-http-server-locally>Python run HTTP server locally</h3><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>python -m http.server <span style=color:#ae81ff>8000</span> --bind 127.0.0.1</code></pre></td></tr></table></div></div><h2 id=thesis>Thesis</h2><h3 id=os-kit>OS Kit</h3><p>The OSKit is a framework and a set of <a href=https://www.cs.utah.edu/flux/oskit/html/oskit-wwwch1.html>34 component libraries</a>
-oriented to operating systems, together with extensive documentation. By
-providing in a modular way not only most of the infrastructure “grunge”
-needed by an OS, but also many higher-level components, the OSKit’s goal
-is to lower the barrier to entry to OS R&D and to lower its costs. The
-OSKit makes it vastly easier to create a new OS, port an existing OS to
-the x86 (or in the future, to other architectures supported by the
-OSkit), or enhance an OS to support a wider range of devices, file
-system formats, executable formats, or network services. The OSKit also
-works well for constructing OS-related programs, such as boot loaders or
-OS-level servers atop a microkernel</p><h3 id=memory-management>Memory management</h3><h4 id=parkinson-and-rsquo-s-law>Parkinson’s law</h4><p>Programs and their data expand to fill the memory available to hold them</p><h4 id=memory-hierarchy>Memory hierarchy</h4><ul><li><p>Small fast and expensive memory up to a very slow and cheap memory</p><ul><li>Processor registers</li></ul><ul><li>Processor cache</li></ul><ul><li>Random access memory (RAM)</li></ul><ul><li>Flash/USB memory</li></ul><ul><li>Hard drive</li></ul><ul><li>Tape backups</li></ul></li></ul><ul><li><p>The part that handles memory in the operating system is called memory manager</p><ul><li>The manager should be capable of allocating/deallocating memory for processes</li></ul><ul><li>Keep track of which location in memory is in use</li></ul></li></ul><ul><li>Lowest cache level is <em>generally</em> handled by the hardware</li></ul><ul><li><p>Not having any memory abstraction at all is the simplest abstraction</p><p>The simplest memory abstraction is to have no abstraction at all,
-that being said, the programmer sees all the memory and may read/write
-from anywhere, however, this implies one program is running, otherwise
-one program may interfere with the other</p><ul><li><p>One solution for allowing two or more programs running</p><p>simultaneously is if one program knows about the existence of the other.
-With this approach, the programmer requires to divide memory into 2
-“blocks”, and allocate each block to the corresponding program, for
-example, the kernel may be at the button of memory and the program on
-top of it. It’s worth noting this implies the program may wipe (or
-read/write) the kernel address</p></li></ul><ul><li>Another solution is to store the kernel in ROM, and keep the program in RAM</li></ul><ul><li><p>When the kernel needs to switch process, it will load the the</p><p>program from disk and overwrite the current running program</p></li></ul><ul><li><p>All the kernel needs to do is save the memory context to disk and</p><p>load the new program</p></li></ul><ul><li><p>With the help of extra hardware, it is possible to divide memory</p><p>into blocks and protect other programs from accessing blocks of other
-programs loaded in memory</p><ul><li><p>This brings a problem since programs may move data from physical</p><p>memory, say program A jumps to address `0x12` and program b copies data
-from in memory address `0x12`. When program A jumps to address `0x12` it
-would instead crash, since that was not the expected address. The
-problem is that both programs reference physical memory and this is *<strong>*totally undesirable**</strong>, what is desirable is that programs reference a
-private set of local address to it</p><p>See: <a href=https://imgur.com/a/5FlWN4A>https://imgur.com/a/5FlWN4A</a></p></li></ul><ul><li><p>*<strong>*Static relocation**</strong>: modify the second program on the fly as</p><p>it loaded into memory (IBM 360 did this)</p></li></ul></li></ul></li></ul><ul><li><p>The operating system should coordinate on how these memories are handled</p><ul><li><p>It should handle:</p><ul><li>Keep track which parts of memory are in used and which aren’t</li></ul><ul><li>Allocate and deallocate memory</li></ul><ul><li>Swapping between main memory to disk when main memory is too small to hold the process</li></ul></li></ul></li></ul><ul><li><p>Memory abstractions</p><ul><li><p>Address spaces</p><ul><li>Allows multiple applications to be in memory at the same time</li></ul><ul><li>Prevents applications from interfering with each other</li></ul><ul><li>Abstract memory for programs to be stored in</li></ul><ul><li><p>Works like a telephone number</p><p>in Brazil, it is common for local cities to have a 8-digit phone number, so the
-address space for the telephone number starts in 0000,0000 up to 9999,9999.</p></li></ul></li></ul><ul><li><p>Stack pointer</p><ul><li><p>RISC-V ABI’s stack pointer</p><p>The stack pointer points to the next available memory location on the stack, and
-the frame pointer points to the base of the <span class=underline><span class=underline>stack frame</span></span>.</p></li></ul></li></ul></li></ul><h4 id=physical-memory-management>Physical Memory management</h4><ul><li>Direct memory address to access a real location in RAM</li></ul><h3 id=understanding-risc-v-stack-pointer>Understanding RISC-V stack pointer</h3><h4 id=l06-riscv-functions--6up--dot-pdf><a href=https://dynalist.io/u/5cYI9hHNgUYs0U47UXe0RZ6U>L06 RISCV Functions(6up).pdf</a></h4><h3 id=code>Code</h3><h4 id=linux-trap-handler>Linux trap handler</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-C data-lang=C><span style=color:#66d9ef>void</span> __init <span style=color:#a6e22e>trap_init</span>(<span style=color:#66d9ef>void</span>)
-{
-    <span style=color:#75715e>/*
-</span><span style=color:#75715e>    * Set sup0 scratch register to 0, indicating to exception vector
-</span><span style=color:#75715e>    * that we are presently executing in the kernel
-</span><span style=color:#75715e>    */</span>
-    csr_write(CSR_SCRATCH, <span style=color:#ae81ff>0</span>);
-    <span style=color:#75715e>/* Set the exception vector address */</span>
-    csr_write(CSR_TVEC, <span style=color:#f92672>&amp;</span>handle_exception);
-    <span style=color:#75715e>/* Enable all interrupts */</span>
-    csr_write(CSR_IE, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>);
-}
-</code></pre></div><h4 id=send-s-mode-interrupts-and-most-exceptions-to-s-mode>Send S-mode interrupts and most exceptions to S-mode</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-C data-lang=C><span style=color:#75715e>// send S-mode interrupts and most exceptions straight to S-mode
-</span><span style=color:#75715e></span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>delegate_traps</span>() {
-  <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>supports_extension(<span style=color:#e6db74>&#39;S&#39;</span>))
-    <span style=color:#66d9ef>return</span>;
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><input type=checkbox class=hidden id=toc-control><aside class="hidden clearfix"><nav><ul><li class=book-section-flat><strong>Notes</strong><ul><li class="flex justify-between"><a href=/notes/the-go-programming-language-spec/>The Go Programming Language Specification - The Go Programming Language</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/communication/>Communication</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/politics/>Politics</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/c-coding-theory/>Coding Theory</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/code-snippets/>Code snippets</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/binary-calculation/>Binary calculation</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/math/>Math</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/integral-calculus/>Integral Calculus</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/python/>Python</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/compiler/>Compiler</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/computer-architecture/>Computer Architecture</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/riscv/>RISCV</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/thesis/>Thesis</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/c-programming/>C programming</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/programming/>Programming</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/go-programming/>Go Programming</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/computer-science/>Computer Science</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/operating-systems/>Operating Systems</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/socratic-questioning/>Socratic questioning</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/mental-models/>Mental models</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/mindset/>Mindset</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/learning/>Learning</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/thinking-methods/>Thinking methods</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/interesting-golang-libraries/>Interesting Golang libraries</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/reading-progress/>Book progress</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/abortion/>Abortion</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/media/>Media</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/na-batalha-contra-o-coronavirus/>Na batalha contra o coronavirus, faltam lideres a humanidade</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/alice-in-wonderland/>Alice in wonderland: The complete collection</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/non-violent-communication/>Nonviolent communication: A language for life</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/the-great-mental-models/>The great mental models: General thinking concepts</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/clean-code/>Clean code</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/clean-architecture/>Clean architecture</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/operating-systems/>Operating systems: Internals and design principles (9th edition)</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/the-pragmatic-programmer/>The Pragmatic programmer: from journeyman to master</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/communist-manifesto/>The Communist Manifesto</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/org-roam-firefox-bookmark/>Org-roam firefox bookmark</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/orgmode-firefox-bookmark/>Org-mode Firefox bookmarks</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/cool-companies/>Cool companies</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/list-of-spotify-artists/>List of Spotify artists</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/information_theory/>Information Theory</a>
+<span>0</span></li></ul></li></ul></nav></aside></header><li><a data-toggle="
+  June 4, 2020
 
-  uintptr_t interrupts <span style=color:#f92672>=</span> MIP_SSIP <span style=color:#f92672>|</span> MIP_STIP <span style=color:#f92672>|</span> MIP_SEIP;
-  uintptr_t exceptions <span style=color:#f92672>=</span>
-      (<span style=color:#ae81ff>1U</span> <span style=color:#f92672>&lt;&lt;</span> CAUSE_MISALIGNED_FETCH) <span style=color:#f92672>|</span> (<span style=color:#ae81ff>1U</span> <span style=color:#f92672>&lt;&lt;</span> CAUSE_FETCH_PAGE_FAULT) <span style=color:#f92672>|</span>
-      (<span style=color:#ae81ff>1U</span> <span style=color:#f92672>&lt;&lt;</span> CAUSE_BREAKPOINT) <span style=color:#f92672>|</span> (<span style=color:#ae81ff>1U</span> <span style=color:#f92672>&lt;&lt;</span> CAUSE_LOAD_PAGE_FAULT) <span style=color:#f92672>|</span>
-      (<span style=color:#ae81ff>1U</span> <span style=color:#f92672>&lt;&lt;</span> CAUSE_STORE_PAGE_FAULT) <span style=color:#f92672>|</span> (<span style=color:#ae81ff>1U</span> <span style=color:#f92672>&lt;&lt;</span> CAUSE_USER_ECALL);
 
-  write_csr(mideleg, interrupts);
-  write_csr(medeleg, exceptions);
-  assert(read_csr(mideleg) <span style=color:#f92672>==</span> interrupts);
-  assert(read_csr(medeleg) <span style=color:#f92672>==</span> exceptions);
-}
-</code></pre></div><h4 id=timer-interrupt-in-assembly>Timer interrupt in assembly</h4><ul><li><a href=https://forums.sifive.com/t/beginner-trying-to-set-up-timer-irq-in-assembler-how-to-print-csrs-in-gdb/2764>https://forums.sifive.com/t/beginner-trying-to-set-up-timer-irq-in-assembler-how-to-print-csrs-in-gdb/2764</a></li></ul><h4 id=freedom-metal-interrupt>Freedom metal Interrupt</h4><ul><li><p>Initialize CPU interrupt controller</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-C data-lang=C><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>__metal_driver_riscv_cpu_controller_interrupt_init</span>(
-    <span style=color:#66d9ef>struct</span> metal_interrupt <span style=color:#f92672>*</span>controller) {
-  <span style=color:#66d9ef>struct</span> __metal_driver_riscv_cpu_intc <span style=color:#f92672>*</span>intc <span style=color:#f92672>=</span> (<span style=color:#66d9ef>void</span> <span style=color:#f92672>*</span>)(controller);
-  uintptr_t val;
 
-  <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>intc<span style=color:#f92672>-&gt;</span>init_done) {
-    <span style=color:#75715e>/* Disable and clear all interrupt sources */</span>
-    <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrc mie, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>));
-    <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrc mip, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>));
+  
 
-    <span style=color:#75715e>/* Read the misa CSR to determine if the delegation registers exist */</span>
-    uintptr_t misa;
-    <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrr %0, misa&#34;</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;=r&#34;</span>(misa));
+" href=/notes/the-go-programming-language-spec/>The Go Programming Language Specification - The Go Programming Language</a></li><p></p><li><a data-toggle="
+  June 2, 2020
 
-    <span style=color:#75715e>/* The delegation CSRs exist if user mode interrupts (N extension) or
-</span><span style=color:#75715e>     * supervisor mode (S extension) are supported */</span>
-    <span style=color:#66d9ef>if</span> ((misa <span style=color:#f92672>&amp;</span> METAL_ISA_N_EXTENSIONS) <span style=color:#f92672>||</span> (misa <span style=color:#f92672>&amp;</span> METAL_ISA_S_EXTENSIONS)) {
-      <span style=color:#75715e>/* Disable interrupt and exception delegation */</span>
-      <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrc mideleg, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>));
-      <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrc medeleg, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>));
-    }
 
-    <span style=color:#75715e>/* The satp CSR exists if supervisor mode (S extension) is supported */</span>
-    <span style=color:#66d9ef>if</span> (misa <span style=color:#f92672>&amp;</span> METAL_ISA_S_EXTENSIONS) {
-      <span style=color:#75715e>/* Clear the entire CSR to make sure that satp.MODE = 0 */</span>
-      <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrc satp, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>));
-    }
 
-    <span style=color:#75715e>/* Default to use direct interrupt, setup sw cb table*/</span>
-    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> METAL_MAX_MI; i<span style=color:#f92672>++</span>) {
-      intc<span style=color:#f92672>-&gt;</span>metal_int_table[i].handler <span style=color:#f92672>=</span> NULL;
-      intc<span style=color:#f92672>-&gt;</span>metal_int_table[i].sub_int <span style=color:#f92672>=</span> NULL;
-      intc<span style=color:#f92672>-&gt;</span>metal_int_table[i].exint_data <span style=color:#f92672>=</span> NULL;
-    }
-    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> METAL_MAX_ME; i<span style=color:#f92672>++</span>) {
-      intc<span style=color:#f92672>-&gt;</span>metal_exception_table[i] <span style=color:#f92672>=</span> __metal_default_exception_handler;
-    }
-    __metal_controller_interrupt_vector(METAL_DIRECT_MODE,
-                                        <span style=color:#f92672>&amp;</span>__metal_exception_handler);
-    <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrr %0, misa&#34;</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;=r&#34;</span>(val));
-    <span style=color:#66d9ef>if</span> (val <span style=color:#f92672>&amp;</span> (METAL_ISA_D_EXTENSIONS <span style=color:#f92672>|</span> METAL_ISA_F_EXTENSIONS <span style=color:#f92672>|</span>
-               METAL_ISA_Q_EXTENSIONS)) {
-      <span style=color:#75715e>/* Floating point architecture, so turn on FP register saving*/</span>
-      <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrr %0, mstatus&#34;</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;=r&#34;</span>(val));
-      <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrw mstatus, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(val <span style=color:#f92672>|</span> METAL_MSTATUS_FS_INIT));
-    }
-    intc<span style=color:#f92672>-&gt;</span>init_done <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
-  }
-}
-</code></pre></div></li></ul><ul><li><p>Set trap vector configuration</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-C data-lang=C><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>__metal_controller_interrupt_vector</span>(metal_vector_mode mode,
-                                         <span style=color:#66d9ef>void</span> <span style=color:#f92672>*</span>vec_table) {
-  uintptr_t trap_entry, val;
+  
 
-  <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrr %0, mtvec&#34;</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;=r&#34;</span>(val));
-  val <span style=color:#f92672>&amp;=</span> <span style=color:#f92672>~</span>(METAL_MTVEC_CLIC_VECTORED <span style=color:#f92672>|</span> METAL_MTVEC_CLIC_RESERVED);
-  trap_entry <span style=color:#f92672>=</span> (uintptr_t)vec_table;
+" href=/notes/communication/>Communication</a></li><p></p><li><a data-toggle="
+  June 2, 2020
 
-  <span style=color:#66d9ef>switch</span> (mode) {
-  <span style=color:#66d9ef>case</span> METAL_SELECTIVE_VECTOR_MODE:
-    <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrw mtvt, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(trap_entry <span style=color:#f92672>|</span> METAL_MTVEC_CLIC));
-    <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrw mtvec, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(val <span style=color:#f92672>|</span> METAL_MTVEC_CLIC));
-    <span style=color:#66d9ef>break</span>;
-  <span style=color:#66d9ef>case</span> METAL_HARDWARE_VECTOR_MODE:
-    <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrw mtvt, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(trap_entry <span style=color:#f92672>|</span> METAL_MTVEC_CLIC_VECTORED));
-    <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrw mtvec, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(val <span style=color:#f92672>|</span> METAL_MTVEC_CLIC_VECTORED));
-    <span style=color:#66d9ef>break</span>;
-  <span style=color:#66d9ef>case</span> METAL_VECTOR_MODE:
-    <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;csrw mtvec, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(trap_entry <span style=color:#f92672>|</span> METAL_MTVEC_VECTORED));
-    <span style=color:#66d9ef>break</span>;
-  <span style=color:#66d9ef>case</span> METAL_DIRECT_MODE:
-    <span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(
-        <span style=color:#e6db74>&#34;csrw mtvec, %0&#34;</span> <span style=color:#f92672>::</span><span style=color:#e6db74>&#34;r&#34;</span>(trap_entry <span style=color:#f92672>&amp;</span> <span style=color:#f92672>~</span>METAL_MTVEC_CLIC_VECTORED));
-    <span style=color:#66d9ef>break</span>;
-  }
-}
-</code></pre></div></li></ul><h4 id=for-direct-access-interrupt-vector-configuration>For <code>DIRECT_ACCESS</code> interrupt vector configuration</h4><h3 id=irc>IRC</h3><h4 id=switching-from-machine-mode-to-supervisor-mode><a href=https://dynalist.io/u/33rH8mexp0c1%5FS2JNvLTcwEJ>Switching from machine-mode to supervisor-mode!</a></h4><h3 id=privilege-modes>Privilege modes</h3><table><thead><tr><th>Level</th><th>Encoding</th><th>Name</th><th>Abbreviation</th></tr></thead><tbody><tr><td>0</td><td>00</td><td>User/Application</td><td>U</td></tr><tr><td>1</td><td>01</td><td>Supervisor</td><td>S</td></tr><tr><td>2</td><td>10</td><td>Reserved</td><td></td></tr><tr><td>3</td><td>11</td><td>Machine</td><td>M</td></tr></tbody></table><h4 id=provides-protection-between-different-components-of-the-software-stack>Provides protection between different components of the software stack</h4><h4 id=any-attempts-to-perform-an-operation-not-allowed-by-the-current-mode-will-cause-an-exception-to-be-raised>Any attempts to perform an operation not allowed by the current mode will cause an exception to be raised</h4><h4 id=these-exceptions-will-normally-cause-traps-into-the-underlying-execution-environment>These exceptions will normally cause traps into the underlying execution environment</h4><h4 id=machine-mode>Machine mode</h4><ul><li>Highest privilege</li></ul><ul><li>*<strong>*Mandatory**</strong> privilege level for RISC-V hardware platform</li></ul><ul><li>Trusted code environment</li></ul><ul><li>Low level access to the machine implementation</li></ul><ul><li>Manage secure execution environments</li></ul><h4 id=user-mode-and-supervisor-mode-are-indented-for-conventional-application-and-operating-systems>User mode and supervisor mode are indented for conventional application and operating systems</h4><table><thead><tr><th>Number of levels</th><th>Supported modes</th><th>Indented Usage</th></tr></thead><tbody><tr><td>1</td><td>M</td><td>Simple embedded systems</td></tr><tr><td>2</td><td>M, U</td><td>Secure embedded systems</td></tr><tr><td>3</td><td>M, S U</td><td>Unix-like operating systems</td></tr></tbody></table><h4 id=exceptions>Exceptions</h4><ul><li>Any attempts to access non-existent CSR, read or write a read-only register raises an *<strong>*illegal instruction**</strong></li></ul><ul><li>A read/write register might also contain bits that are read-only, in which writes to read-only bits *<strong>*are ignored**</strong></li></ul><h4 id=supervisor-mode>Supervisor mode</h4><p><a href=http://www-inst.eecs.berkeley.edu/~cs152/sp12/handouts/riscv-supervisor.pdf>http://www-inst.eecs.berkeley.edu/~cs152/sp12/handouts/riscv-supervisor.pdf</a></p><h4 id=steps-to-reproduce-the-behavior>*<strong>*Steps to reproduce the behavior**</strong></h4><ul><li>Switch to machine mode (if not already by default)</li></ul><h2 id=books>Books</h2><h3 id=list>List</h3><div class=table-caption><span class=table-number>Table 1</span>:
-Clock summary at <span class=timestamp-wrapper><span class=timestamp>[2020-05-01 Fri 15:13]</span></span></div><table><thead><tr><th>Headline</th><th>Time</th><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Total time</strong></td><td><strong>3:49</strong></td><td></td><td></td><td></td></tr><tr><td>    List</td><td></td><td></td><td>3:49</td><td></td></tr><tr><td>      Nonviolent Communication: A language…</td><td></td><td></td><td></td><td>3:49</td></tr></tbody></table><h4 id=nonviolent-communication-a-language-for-life><span class="org-todo todo READING">READING</span> Nonviolent Communication: A language for life</h4><ul><li>State “READING” from “TODO” <span class=timestamp-wrapper><span class=timestamp>[2020-04-29 Wed 17:50]</span></span></li></ul><h4 id=clean-code><span class="org-todo todo NEXT">NEXT</span> Clean Code</h4><h3 id=mídia-noam-chomsky>*<strong>*Mídia**</strong> - Noam Chomsky</h3><h4 id=duas-concepções-diferentes-de-democracia>Duas concepções diferentes de democracia</h4><ol><li>Uma sociedade democrática é aquela em que o povo dispõe de</li></ol><p>condições de participar de maneira significativa na condução de seus
-assuntos pessoais e na qual os canais de informação são acessíveis e
-livres</p><ol><li>O povo deve ser impedido de conduzir seus assuntos pessoais e os</li></ol><p>canais de informação devem ser estreita e rigidamente controlados</p><ul><li>Essa é a concepção predominante</li><li>Primeiras revoluções democráticas na Inglaterra do século XVII
-(17) expressam em grande medida esse ponto de vista</li></ul><h4 id=primeira-operação-de-propaganda-governamental>Primeira operação de propaganda governamental</h4><ul><li><p>Governo de <a href=https://en.wikipedia.org/wiki/Woodrow%5FWilson>Woodrow Wilson</a></p><p>[[<a href=https://dynalist.io/u/ZQA1dAc7Eut0bwSRwZeMRqQ0>https://dynalist.io/u/ZQA1dAc7Eut0bwSRwZeMRqQ0</a>]]</p></li></ul><ul><li><p>Presidente dos Estados Unidos em 1916</p><ul><li><p>Plataforma “Paz sem Vitória”</p><ul><li>Metade da Primeira Guerra Mundial</li></ul></li></ul></li></ul><h4 id=população-bastante-pacifista-e-sem-motivo-algum-que-justificasse-envolvimento-em-guerra-europeia>População bastante pacifista e sem motivo algum que justificasse envolvimento em guerra Europeia</h4><h4 id=constituída-uma-comissão-de-propaganda-governamental>Constituída uma comissão de propaganda governamental</h4><ul><li><p><a href=https://en.wikipedia.org/wiki/Committee%5Fon%5FPublic%5FInformation>ComissãoCreel</a></p><p><a href=https://dynalist.io/u/7sEyNdz3VqlLWY9GpIypishZ>https://dynalist.io/u/7sEyNdz3VqlLWY9GpIypishZ</a></p><ul><li>Committee on Public Information</li></ul><ul><li>1917 - 1919</li></ul><ul><li><p>Transformou uma população dentro de 6 meses</p><p>Conseguiua dentro de 6 meses transformar uma população pacifista
-em uma população histérica e belicosa que queria destruir tudo que fosse
-alemão</p><ul><li>Efeito importante que levou a outros efeitos</li></ul></li></ul></li></ul><h4 id=após-a-guerra-forma-utilizadas-as-mesmas-técnicas-para-gerar-um-pânico-vermelho>Após a guerra, forma utilizadas as mesmas técnicas para gerar um Pânico Vermelho</h4><ul><li><p>Obteve êxito considerável na destruição de sindicatos e na eliminação de problemas perigosos como</p><ul><li>Liberdade de imprensa</li></ul><ul><li>Liberdade de pensamento político</li></ul></li></ul><ul><li><p>Grande apoio dos lideres empresariais e da mídia</p><ul><li>Ambos organizaram e investiram muito na iniciativa</li></ul></li></ul><h4 id=intelectuais-progressistas-participaram-ativamente>Intelectuais progressistas participaram ativamente</h4><ul><li><p>Pessoas do circulo de <a href=https://en.wikipedia.org/wiki/John%5FDewey>JohnDewey</a></p><p><a href=https://dynalist.io/u/4O4qv1%5Fwmp2T5nHYLMIiMcDD>https://dynalist.io/u/4O4qv1%5Fwmp2T5nHYLMIiMcDD</a></p></li></ul><h2 id=political-thoughts>Political thoughts</h2><h3 id=abortion-should-be-legal-safe-and-rare>Abortion should be legal, safe and rare</h3><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p>I am not really sure why this is, as I haven’t studied Universal methods] <a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div class=book-languages tabindex=0 aria-haspopup=true><ul><li class="flex align-center"><img src=/svg/translate.svg class=book-icon alt=Languages>
+
+
+  
+
+" href=/notes/politics/>Politics</a></li><p></p><li><a data-toggle="
+  May 31, 2020
+
+
+
+  
+
+" href=/notes/c-coding-theory/>Coding Theory</a></li><p></p><li><a data-toggle="
+  May 31, 2020
+
+
+
+  
+
+" href=/notes/code-snippets/>Code snippets</a></li><p></p><li><a data-toggle="
+  May 31, 2020
+
+
+
+  
+
+" href=/notes/binary-calculation/>Binary calculation</a></li><p></p><li><a data-toggle="
+  May 31, 2020
+
+
+
+  
+
+" href=/notes/math/>Math</a></li><p></p><li><a data-toggle="
+  May 31, 2020
+
+
+
+  
+
+" href=/notes/integral-calculus/>Integral Calculus</a></li><p></p><li><a data-toggle="
+  May 31, 2020
+
+
+
+  
+
+" href=/notes/python/>Python</a></li><p></p><li><a data-toggle="
+  May 31, 2020
+
+
+
+  
+
+" href=/notes/compiler/>Compiler</a></li><p></p><ul class=pagination><li class=page-item><a href=/notes/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class="page-item disabled"><a class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class="page-item active"><a class=page-link href=/notes/>1</a></li><li class=page-item><a class=page-link href=/notes/page/2/>2</a></li><li class=page-item><a class=page-link href=/notes/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/notes/page/5/>5</a></li><li class=page-item><a href=/notes/page/2/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/notes/page/5/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul><footer class=book-footer><div class="flex flex-wrap justify-between"><div class=book-languages tabindex=0 aria-haspopup=true><ul><li class="flex align-center"><img src=/svg/translate.svg class=book-icon alt=Languages>
 English</li></ul><ul class=book-languages-list><li class=active><a href=https://seds.nl/ class="flex align-center"><img src=/svg/translate.svg class=book-icon alt=Languages>
 English</a></li><li><a href=https://seds.nl/pt/ class="flex align-center"><img src=/svg/translate.svg class=book-icon alt=Languages>
-Portuguese</a></li></ul></div><div><a class="flex align-center" href=https://github.com/benmezger/blog/commit/ce466df49914c6429ce1e49295f9592e40b4f183 title="Last modified by Ben Mezger | May 2, 2020" target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>May 2, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/benmezger/blog/edit/master/content/notes/index.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>Edit this page</span></a></div></div></footer><div class=book-comments><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
-var d=document,s=d.createElement('script');s.async=true;s.src='//'+"benmezger"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><ul><li><a href=#compilers>Compilers</a><ul><li><a href=#syntax-analysis>Syntax Analysis</a></li><li><a href=#grammar>Grammar</a></li><li><a href=#types-of-parsers>Types of parsers</a></li></ul></li><li><a href=#math><span class="org-todo todo TODO">TODO</span> Math</a><ul><li><a href=#integral-calculus>Integral Calculus</a></li></ul></li><li><a href=#programming-notes>Programming notes</a><ul><li><a href=#c-programming>C programming</a></li><li><a href=#go-programming>Go programming</a></li></ul></li><li><a href=#code-snippets>Code snippets</a><ul><li><a href=#python-run-http-server-locally>Python run HTTP server locally</a></li></ul></li><li><a href=#thesis>Thesis</a><ul><li><a href=#os-kit>OS Kit</a></li><li><a href=#memory-management>Memory management</a></li><li><a href=#understanding-risc-v-stack-pointer>Understanding RISC-V stack pointer</a></li><li><a href=#code>Code</a></li><li><a href=#irc>IRC</a></li><li><a href=#privilege-modes>Privilege modes</a></li></ul></li><li><a href=#books>Books</a><ul><li><a href=#list>List</a></li><li><a href=#mídia-noam-chomsky>*<strong>*Mídia**</strong> - Noam Chomsky</a></li></ul></li><li><a href=#political-thoughts>Political thoughts</a><ul><li><a href=#abortion-should-be-legal-safe-and-rare>Abortion should be legal, safe and rare</a></li></ul></li></ul></li></ul></nav></aside></main></body></html>
+Portuguese</a></li></ul></div></div></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav><ul><li class=book-section-flat><strong>Notes</strong><ul><li class="flex justify-between"><a href=/notes/the-go-programming-language-spec/>The Go Programming Language Specification - The Go Programming Language</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/communication/>Communication</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/politics/>Politics</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/c-coding-theory/>Coding Theory</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/code-snippets/>Code snippets</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/binary-calculation/>Binary calculation</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/math/>Math</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/integral-calculus/>Integral Calculus</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/python/>Python</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/compiler/>Compiler</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/computer-architecture/>Computer Architecture</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/riscv/>RISCV</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/thesis/>Thesis</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/c-programming/>C programming</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/programming/>Programming</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/go-programming/>Go Programming</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/computer-science/>Computer Science</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/operating-systems/>Operating Systems</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/socratic-questioning/>Socratic questioning</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/mental-models/>Mental models</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/mindset/>Mindset</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/learning/>Learning</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/thinking-methods/>Thinking methods</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/interesting-golang-libraries/>Interesting Golang libraries</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/reading-progress/>Book progress</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/abortion/>Abortion</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/media/>Media</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/na-batalha-contra-o-coronavirus/>Na batalha contra o coronavirus, faltam lideres a humanidade</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/alice-in-wonderland/>Alice in wonderland: The complete collection</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/non-violent-communication/>Nonviolent communication: A language for life</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/the-great-mental-models/>The great mental models: General thinking concepts</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/clean-code/>Clean code</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/clean-architecture/>Clean architecture</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/operating-systems/>Operating systems: Internals and design principles (9th edition)</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/the-pragmatic-programmer/>The Pragmatic programmer: from journeyman to master</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/communist-manifesto/>The Communist Manifesto</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/org-roam-firefox-bookmark/>Org-roam firefox bookmark</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/orgmode-firefox-bookmark/>Org-mode Firefox bookmarks</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/cool-companies/>Cool companies</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/list-of-spotify-artists/>List of Spotify artists</a>
+<span>0</span></li><li class="flex justify-between"><a href=/notes/information_theory/>Information Theory</a>
+<span>0</span></li></ul></li></ul></nav></aside></main></body></html>

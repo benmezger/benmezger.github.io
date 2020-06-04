@@ -1,57 +1,109 @@
 User-agent: *
 
 
+Allow: /notes/
+
+Allow: /notes/the-go-programming-language-spec/
+
+Allow: /notes/
+
+Allow: /notes/communication/
+
+Allow: /notes/politics/
+
+Allow: /notes/c-coding-theory/
+
+Allow: /notes/code-snippets/
+
+Allow: /notes/binary-calculation/
+
+Allow: /notes/math/
+
+Allow: /notes/integral-calculus/
+
+Allow: /notes/python/
+
+Allow: /notes/compiler/
+
+Allow: /notes/computer-architecture/
+
+Allow: /notes/riscv/
+
+Allow: /notes/thesis/
+
+Allow: /notes/c-programming/
+
+Allow: /notes/programming/
+
+Allow: /notes/go-programming/
+
+Allow: /notes/computer-science/
+
+Allow: /notes/operating-systems/
+
+Allow: /notes/socratic-questioning/
+
+Allow: /notes/mental-models/
+
+Allow: /notes/mindset/
+
+Allow: /notes/learning/
+
+Allow: /notes/thinking-methods/
+
+Allow: /notes/interesting-golang-libraries/
+
+Allow: /notes/reading-progress/
+
+Allow: /notes/abortion/
+
+Allow: /notes/media/
+
+Allow: /notes/na-batalha-contra-o-coronavirus/
+
+Allow: /notes/alice-in-wonderland/
+
+Allow: /notes/non-violent-communication/
+
+Allow: /notes/the-great-mental-models/
+
+Allow: /notes/clean-code/
+
+Allow: /notes/clean-architecture/
+
+Allow: /notes/operating-systems/
+
+Allow: /notes/the-pragmatic-programmer/
+
+Allow: /notes/communist-manifesto/
+
+Allow: /notes/org-roam-firefox-bookmark/
+
+Allow: /notes/orgmode-firefox-bookmark/
+
+Allow: /notes/cool-companies/
+
+Allow: /notes/list-of-spotify-artists/
+
+Allow: /notes/information_theory/
+
 Allow: /posts/attaching-jira-issues-to-commits/
-
-Allow: /categories/blog/
-
-Allow: /categories/
-
-Allow: /tags/git/
 
 Allow: /posts/
 
-Allow: /tags/projects/
-
-Allow: /tags/
-
 Allow: /posts/http-hooks-with-custom-arguments/
-
-Allow: /tags/python/
-
-Allow: /tags/c/
-
-Allow: /categories/kernel/
-
-Allow: /tags/riscv/
 
 Allow: /posts/writting-a-kernel-part-1/
 
 Allow: /menu/
 
-Allow: /categories/about/
-
 Allow: /books/
-
-Allow: /categories/books/
-
-Allow: /tags/emacs/
 
 Allow: /posts/hello-orgmode/
 
 Allow: /
 
-Allow: /notes/
-
-Allow: /categories/notes/
-
-Allow: /tags/orgmode/
-
-Allow: /categories/web/
-
 Allow: /posts/finding-exposed-git-repositories/
-
-Allow: /tags/security/
 
 Allow: /posts/notes-on-linux-printk/
 

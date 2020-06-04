@@ -3,7 +3,5 @@ User-agent: *
 
 Allow: /pt/
 
-Allow: /pt/categories/
-
-Allow: /pt/tags/
+Allow: /pt/notes/
 
