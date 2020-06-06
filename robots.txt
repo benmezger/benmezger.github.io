@@ -3,6 +3,8 @@ User-agent: *
 
 Allow: /notes/
 
+Allow: /notes/weed/
+
 Allow: /notes/org_roam/
 
 Allow: /notes/ox_hugo_export_all_roam_to_hugo/
