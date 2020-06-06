@@ -3,9 +3,15 @@ User-agent: *
 
 Allow: /notes/
 
-Allow: /notes/the-go-programming-language-spec/
+Allow: /notes/org_roam/
 
-Allow: /notes/
+Allow: /notes/ox_hugo_export_all_roam_to_hugo/
+
+Allow: /notes/emacs/
+
+Allow: /notes/org_mode/
+
+Allow: /notes/org_roam_export_backlinks_on_hugo/
 
 Allow: /notes/communication/
 
@@ -106,4 +112,12 @@ Allow: /
 Allow: /posts/finding-exposed-git-repositories/
 
 Allow: /posts/notes-on-linux-printk/
+
+Allow: /notes/a_brief_introduction_to_emacs_lisp_for_people_with_programming_background_lgmoneda/
+
+Allow: /notes/dots_config_el_at_master_jethrokuan_dots/
+
+Allow: /notes/
+
+Allow: /notes/the-go-programming-language-spec/
 

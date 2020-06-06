@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="tags Computer Science Programming  Syntax Analysis #  Syntax analysis happens after the Lexical phase, and it is responsible for detecting syntax errors.
+Grammar #  Be design, computer languages have defined structure of what constitutes a valid program. in Python, a program is made up of functions/classes/imports, a function requires declarations and/or statements and so on. In C, a valid program needs to have a least a function called main, otherwise the GNU&rsquo;s linker is unable to link the program.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Compiler" />
+<meta property="og:description" content="tags Computer Science Programming  Syntax Analysis #  Syntax analysis happens after the Lexical phase, and it is responsible for detecting syntax errors.
+Grammar #  Be design, computer languages have defined structure of what constitutes a valid program. in Python, a program is made up of functions/classes/imports, a function requires declarations and/or statements and so on. In C, a valid program needs to have a least a function called main, otherwise the GNU&rsquo;s linker is unable to link the program." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://seds.nl/notes/compiler/preview.html" />
+<meta property="article:published_time" content="2020-05-31T13:03:00-03:00" />
+<meta property="article:modified_time" content="2020-06-05T21:52:15-03:00" />
+<title>Compiler | Ben Mezger</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.56ed549f2b988b8d3ef818340afd62bdb600184e4d10602fa714bf653be663cd.css" integrity="sha256-Vu1UnyuYi40&#43;&#43;Bg0Cv1ivbYAGE5NEGAvpxS/ZTvmY80=">
+<script defer src="/en.search.min.0158108b5f6418c791022add2e1f296453faea1622aa264d183fd8359586de88.js" integrity="sha256-AVgQi19kGMeRAirdLh8pZFP66hYiqiZNGD/YNZWG3og="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138318350-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<link type="text/css" rel="stylesheet" href="/assets/css/orgmode.css">
+
+<link type="text/css" rel="stylesheet" href="/assets/css/custom.css">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous">
+</script>
+
+<style type="text/css">
+  #preview-frame{
+      display: none;
+      position: absolute;
+      z-index: 100;
+  }
+</style>
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Ben Mezger</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/books/" >
+        Books
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/posts">Blog</a></li>
+<li><a href="/notes">Notes</a></li>
+<li><strong>Social</strong>
+<ul>
+<li><a href="https://github.com/benmezger/">Github</a></li>
+<li><a href="https://twitter.com/sys%5Freboot">Twitter</a></li>
+<li><a href="/index.xml">RSS</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Compiler</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#syntax-analysis">Syntax Analysis</a></li>
+        <li><a href="#grammar">Grammar</a></li>
+        <li><a href="#types-of-parsers">Types of parsers</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/notes/compiler/preview.html">Compiler</a>
+  </h1>
+  
+  <h5>May 31, 2020</h5>
+
+
+
+  
+
+
+  <p><dl>
+<dt>tags</dt>
+<dd><a href="/notes/computer-science/">Computer Science</a> <a href="/notes/programming/">Programming</a></dd>
+</dl>
+<h2 id="syntax-analysis">
+  Syntax Analysis
+  <a class="anchor" href="#syntax-analysis">#</a>
+</h2>
+<p>Syntax analysis happens after the Lexical phase, and it is responsible for detecting
+syntax errors.</p>
+<h2 id="grammar">
+  Grammar
+  <a class="anchor" href="#grammar">#</a>
+</h2>
+<p>Be design, computer languages have defined structure of what constitutes a
+valid program. in <a href="/notes/python/">Python</a>, a program is made up of functions/classes/imports, a
+function requires declarations and/or statements and so on. In C, a valid
+program needs to have a least a function called main, otherwise the GNU&rsquo;s linker is
+unable to link the program.</p>
+<p>Programmers may define language grammars using the Backus-Naur Form (BNF)
+notation. Defining grammars offer a lot of benefits for the language designer.
+Like code, language grammars may change overtime. For example, one of Python&rsquo;s
+3.5 new feature was the <a href="https://bugs.python.org/issue24017">support</a> to coroutines with <code>async</code> and <code>await</code> syntax.</p>
+<p>The following <a href="https://github.com/python/cpython/commit/7544508f0245173bff5866aa1598c8f6cce1fc5f#diff-cb0b9d6312c0d67f6d4aa1966766cedd">diff</a> shows some of the changes the developer needed to add
+support for the <code>async</code> before the function definition or allow an <code>async</code>
+function definition to be used as a decorator.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">diff -r ccac513ee610 Grammar/Grammar
+<span style="color:#f92672">--- a/Grammar/Grammar	Mon Apr 20 21:05:23 2015 +0200
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ b/Grammar/Grammar	Mon Apr 20 15:54:06 2015 -0400
+</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -21,8 +21,11 @@
+</span><span style="color:#75715e"></span>
+ decorator: &#39;@&#39; dotted_name [ &#39;(&#39; [arglist] &#39;)&#39; ] NEWLINE
+ decorators: decorator+
+<span style="color:#f92672">-decorated: decorators (classdef | funcdef)
+</span><span style="color:#f92672">-funcdef: &#39;def&#39; NAME parameters [&#39;-&gt;&#39; test] &#39;:&#39; suite
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+decorated: decorators (classdef | funcdef | async_funcdef)
+</span><span style="color:#a6e22e">+
+</span><span style="color:#a6e22e">+async_funcdef: ASYNC funcdef
+</span><span style="color:#a6e22e">+funcdef: (&#39;def&#39; NAME parameters [&#39;-&gt;&#39; test] &#39;:&#39; suite)
+</span><span style="color:#a6e22e">+
+</span><span style="color:#a6e22e"></span> parameters: &#39;(&#39; [typedargslist] &#39;)&#39;
+ typedargslist: (tfpdef [&#39;=&#39; test] (&#39;,&#39; tfpdef [&#39;=&#39; test])* [&#39;,&#39;
+        [&#39;*&#39; [tfpdef] (&#39;,&#39; tfpdef [&#39;=&#39; test])* [&#39;,&#39; &#39;**&#39; tfpdef] | &#39;**&#39; tfpdef]]
+<span style="color:#75715e">@@ -37,18 +40,19 @@
+</span><span style="color:#75715e"></span> simple_stmt: small_stmt (&#39;;&#39; small_stmt)* [&#39;;&#39;] NEWLINE
+ small_stmt: (expr_stmt | del_stmt | pass_stmt | flow_stmt |
+              import_stmt | global_stmt | nonlocal_stmt | assert_stmt)
+</code></pre></div><p>Other than making it easier for the language designer to design the language, it
+allows the grammar to be easily documented and maintained by other language
+designers.</p>
+<p>Some grammars allow parsers (syntax analyzers) to be constructed to determine
+the syntactic structure of the program. By relying on the structured grammar, it
+allows the parsers to be developed more easily and testable.</p>
+<h2 id="types-of-parsers">
+  Types of parsers
+  <a class="anchor" href="#types-of-parsers">#</a>
+</h2>
+<p>There are 3 types of parsers we can use to write a syntax parser.</p>
+<ol>
+<li>Universal: this method can parse any grammar</li>
+<li>Top-down: this method builds parse trees from the top (root) to the button (leaves)</li>
+<li>Bottom-up: this method builds parse trees from the button (leaves) to the top (root)</li>
+</ol>
+<p>The last two methods reads the input from left to right and one symbol at a time.</p>
+<p>The top-down and bottom-up are known to be more efficient in production use<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>I am not really sure why this is, as I haven&rsquo;t studied Universal methods] <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+  
+
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://seds.nl/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://seds.nl/pt/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Portuguese
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+  <div><a class="flex align-center" href="https://github.com/benmezger/blog/commit/73b0234f3e8b20695ce5ecda6c5a8da15eb19b18" title='Last modified by Ben Mezger | June 5, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>June 5, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/benmezger/blog/edit/master/content/notes/2020-05-31--16-03-15Z--compiler.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "benmezger" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#syntax-analysis">Syntax Analysis</a></li>
+        <li><a href="#grammar">Grammar</a></li>
+        <li><a href="#types-of-parsers">Types of parsers</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+
+<script
+  defer
+  src="/js/en.preview.min.126b45a612716194f4a1b74a4bbbe7c9a4e8b9c10d7a8b86da035df5c54d5617.js"
+  integrity="sha256-EmtFphJxYZT0obdKS7vnyaToucENeouG2gNd9cVNVhc=">
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
