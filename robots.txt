@@ -1,7 +1,17 @@
 User-agent: *
 
 
+Allow: /notes/methodologies/
+
 Allow: /notes/
+
+Allow: /notes/software_engineering/
+
+Allow: /notes/use_case_template/
+
+Allow: /notes/go_interfaces/
+
+Allow: /notes/go_reading_struct_tag/
 
 Allow: /notes/weed/
 
