@@ -1,9 +1,13 @@
 User-agent: *
 
 
-Allow: /notes/methodologies/
+Allow: /menu/
+
+Allow: /notes/data_and_reality_a_timeless_perspective_on_perceiving_and_managing_information_in_our_imprecise_world/
 
 Allow: /notes/
+
+Allow: /notes/methodologies/
 
 Allow: /notes/software_engineering/
 
@@ -11,7 +15,17 @@ Allow: /notes/use_case_template/
 
 Allow: /notes/go_interfaces/
 
+Allow: /notes/database/
+
+Allow: /notes/postgres/
+
+Allow: /notes/list_foreign_key_constrants_defined_in_a_database/
+
 Allow: /notes/go_reading_struct_tag/
+
+Allow: /notes/go_defer/
+
+Allow: /notes/antifa/
 
 Allow: /notes/weed/
 
@@ -112,8 +126,6 @@ Allow: /posts/
 Allow: /posts/http-hooks-with-custom-arguments/
 
 Allow: /posts/writting-a-kernel-part-1/
-
-Allow: /menu/
 
 Allow: /books/
 
