@@ -1,11 +1,13 @@
 User-agent: *
 
 
+Allow: /notes/
+
+Allow: /notes/using_macros_in_emacs/
+
 Allow: /menu/
 
 Allow: /notes/data_and_reality_a_timeless_perspective_on_perceiving_and_managing_information_in_our_imprecise_world/
-
-Allow: /notes/
 
 Allow: /notes/methodologies/
 
