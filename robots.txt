@@ -7,6 +7,14 @@ Allow: /posts/
 
 Allow: /notes/
 
+Allow: /notes/personal_git_workflow/
+
+Allow: /notes/kommunistische_partei_deutschlands/
+
+Allow: /notes/python_temporary_file/
+
+Allow: /notes/python_async/
+
 Allow: /notes/using_macros_in_emacs/
 
 Allow: /menu/

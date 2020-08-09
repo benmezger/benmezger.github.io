@@ -1,0 +1,58 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="tags Git Programming Workflow  As of today, this is currently my git flow for most of my projects.
+Commit messages #  From: https://chris.beams.io/posts/git-commit/
+ Feat: Any code that contains only a new feature, whether a new model field, a new API flag, etc Refactor: Any general code refactoring that does not contain anything new nor fixes anything. Chore: Anything related to the build configuration, dependency updates Docs: Anything related to documentation."><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Personal git workflow"><meta property="og:description" content="tags Git Programming Workflow  As of today, this is currently my git flow for most of my projects.
+Commit messages #  From: https://chris.beams.io/posts/git-commit/
+ Feat: Any code that contains only a new feature, whether a new model field, a new API flag, etc Refactor: Any general code refactoring that does not contain anything new nor fixes anything. Chore: Anything related to the build configuration, dependency updates Docs: Anything related to documentation."><meta property="og:type" content="article"><meta property="og:url" content="https://seds.nl/notes/personal_git_workflow/"><meta property="article:published_time" content="2020-08-04T11:06:00-03:00"><meta property="article:modified_time" content="2020-08-09T14:08:45-03:00"><title>Personal git workflow | Ben Mezger</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.d06c2941d6bb925f35bc6e968bc1590f01804052cae4ad5e9ad70d2906fac7a2.css integrity="sha256-0GwpQda7kl81vG6Wi8FZDwGAQFLK5K1emtcNKQb6x6I="><script defer src=/en.search.min.7566e6f52bce2631cccd1dc876c8593356d0e7fff0a4bd0bc003a1a4eba4c5aa.js integrity="sha256-dWbm9SvOJjHMzR3IdshZM1bQ5//wpL0LwAOhpOukxao="></script><script defer src=/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js integrity="sha256-dKi7B/C+6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-138318350-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><link type=text/css rel=stylesheet href=/assets/css/orgmode.css><link type=text/css rel=stylesheet href=/assets/css/custom.css></head><body><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/><span>Ben Mezger</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/books/>Books</a></li></ul><ul><li><a href=/posts>Blog</a></li><li><a href=/notes>Notes</a></li><li><strong>Social</strong><ul><li><a href=https://github.com/benmezger/>Github</a></li><li><a href=https://twitter.com/sys%5Freboot>Twitter</a></li><li><a href=/index.xml>RSS</a></li></ul></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Personal git workflow</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><ul><li><a href=#commit-messages>Commit messages</a><ul><li><a href=#capital-vs-lower-case>Capital vs lower case</a></li></ul></li><li><a href=#branches>Branches</a></li><li><a href=#code-tests>Code tests</a></li><li><a href=#merges>Merges</a></li><li><a href=#keep-it-clean-stupid>Keep it clean, stupid</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1><a href=/notes/personal_git_workflow/>Personal git workflow</a></h1><h5>August 4, 2020</h5><p><dl><dt>tags</dt><dd>Git <a href=/notes/programming/>Programming</a> Workflow</dd></dl><p>As of today, this is currently my git flow for most of my projects.</p><h2 id=commit-messages>Commit messages
+<a class=anchor href=#commit-messages>#</a></h2><p>From: <a href=https://chris.beams.io/posts/git-commit/>https://chris.beams.io/posts/git-commit/</a></p><ul><li><code>Feat</code>: Any code that contains <strong>only</strong> a new feature, whether a new model
+field, a new API flag, etc</li><li><code>Refactor</code>: Any general code refactoring that does not contain anything new
+nor fixes anything.</li><li><code>Chore</code>: Anything related to the build configuration, dependency updates</li><li><code>Docs</code>: Anything related to documentation. This could be a function/class doc,
+READMEs, etc.</li><li><code>Fix</code>: Anything that fixes a bug or any bad business logic</li></ul><p>Don&rsquo;t commit unrelated code, it&rsquo;s easy for us to quickly change a function name
+and commit together with the new feature. Don&rsquo;t do that. Separate your commits
+nicely, it will be much easier to revert commits, view logs and understand the
+development flow of a project.</p><h3 id=capital-vs-lower-case>Capital vs lower case
+<a class=anchor href=#capital-vs-lower-case>#</a></h3><p>I like things in capital, both the type and the commit message, but that&rsquo;s just
+my preference. Follow the project best pratices, if they use lower, stick with
+that.</p><h2 id=branches>Branches
+<a class=anchor href=#branches>#</a></h2><p>Branches are temporary, but they do appear in a merge commit, so make sure the
+branch name makes sense.
+Branch names are separated by what they bring to the code-base (<code>fix</code>, <code>feat</code>,
+<code>refactor</code>, etc). This make it easier to read logs, you know immediately from a
+merge commit that some feature that does X was merged.</p><p>Examples:</p><ul><li><code>feat/create-read-syscall</code></li><li><code>fix/remove-bad-create-user-flag</code></li><li><code>refactor/move-syscalls-to-syscallsdir</code></li><li><code>chore/update-external-dependencies</code></li></ul><h2 id=code-tests>Code tests
+<a class=anchor href=#code-tests>#</a></h2><p>I&rsquo;ve seen lots of repositories with test commits, where they usually bring a new
+test to some specific function. These are fine if you are adding a new test to
+something that existed long before, however, if you are writing a new function
+together with the test, make sure you commit <strong>both</strong> together. This allows us to
+revert a specific commit without having to revert twice in case the test is some
+commit after/before the feature.</p><p>Don&rsquo;t:</p><pre><code class=language-nil data-lang=nil>5e2ac95 | * Fix: install dotenv on base not in dev, cause it is always used on app init
+d0b041f | * Test: Add models tests
+52b781d | * Feat: added version control models
+</code></pre><p>Do:</p><pre><code class=language-nil data-lang=nil>5e2ac95 | * Fix: install dotenv on base not in dev, cause it is always used on app init
+52b781d | * Feat: added version control models
+</code></pre><p>I tend to indeed make test commit messages, however, before pushing the branch,
+I run a <code>git rebase -i</code> so I can fixup commits that should be together and
+reorganize the order of them.</p><p>Before a rebase:</p><pre><code class=language-nil data-lang=nil>cadf28c Test: Add question type tests [Ben Mezger]
+b0a4537 Test: Add surveyadmin list test [Ben Mezger]
+b0a40a7 Feat: Add institution to SurveyAdmin's list_filter [Ben Mezger]
+bb0c7b0 Feat: Add question 'type' to SurveyAdmin's list_display [Ben Mezger]
+842133a Feat: Enable list_filter for SurveyQuestionAdmin [Ben Mezger]
+849823a Test: Add list filter tests [Ben Mezger]
+cadf28c Feat: Add list_filter for user admin [Ben Mezger]
+bd12b9c Fix: Migrate question type to survey response [Ben Mezger]
+</code></pre><p>After a rebase:</p><pre><code class=language-nil data-lang=nil>b0a40a7 Feat: Add institution to SurveyAdmin's list_filter [Ben Mezger]
+bb0c7b0 Feat: add question 'type' to SurveyAdmin's list_display [Ben Mezger]
+849823a Feat: Enable list_filter for SurveyQuestionAdmin [Ben Mezger]
+cadf28c Feat: Add list_filter for user admin [Ben Mezger]
+bd12b9c Fix: Migrate question type to survey response [Ben Mezger]
+</code></pre><h2 id=merges>Merges
+<a class=anchor href=#merges>#</a></h2><p>Merging outside a service like Github? Then make sure you use <code>git merge --no-ff</code> instead of a <code>git merge</code>. This will prevent git from executing a
+fast-forward.</p><h2 id=keep-it-clean-stupid>Keep it clean, stupid
+<a class=anchor href=#keep-it-clean-stupid>#</a></h2><p>Make sure you logs are readable. Having bad logs is the same as not having logs
+at all. Make sure you keep a readable history for yourself and others. Debugging
+bad commits will be <strong>much</strong> easier when running <code>git bisect</code> and your coworkers
+will thank you.</p></p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/benmezger/blog/commit/f3e589570a7703b989ddc9866a902578015e83df title="Last modified by Ben Mezger | August 9, 2020" target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>August 9, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/benmezger/blog/edit/master/content/notes/2020-08-04--14-06-04Z--personal_git_workflow.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>Edit this page</span></a></div></div></footer><div class=book-comments><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"benmezger"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><ul><li><a href=#commit-messages>Commit messages</a><ul><li><a href=#capital-vs-lower-case>Capital vs lower case</a></li></ul></li><li><a href=#branches>Branches</a></li><li><a href=#code-tests>Code tests</a></li><li><a href=#merges>Merges</a></li><li><a href=#keep-it-clean-stupid>Keep it clean, stupid</a></li></ul></li></ul></nav></aside></main></body></html>
