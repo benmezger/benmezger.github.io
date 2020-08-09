@@ -1,6 +1,10 @@
 User-agent: *
 
 
+Allow: /posts/automating-and-testing-dotfiles/
+
+Allow: /posts/
+
 Allow: /notes/
 
 Allow: /notes/using_macros_in_emacs/
@@ -122,8 +126,6 @@ Allow: /notes/list-of-spotify-artists/
 Allow: /notes/information_theory/
 
 Allow: /posts/attaching-jira-issues-to-commits/
-
-Allow: /posts/
 
 Allow: /posts/http-hooks-with-custom-arguments/
 
