@@ -1,9 +1,21 @@
 User-agent: *
 
 
-Allow: /notes/methodologies/
-
 Allow: /notes/
+
+Allow: /notes/personal_git_workflow/
+
+Allow: /notes/kommunistische_partei_deutschlands/
+
+Allow: /notes/python_temporary_file/
+
+Allow: /notes/python_async/
+
+Allow: /notes/using_macros_in_emacs/
+
+Allow: /notes/data_and_reality_a_timeless_perspective_on_perceiving_and_managing_information_in_our_imprecise_world/
+
+Allow: /notes/methodologies/
 
 Allow: /notes/software_engineering/
 
@@ -11,7 +23,17 @@ Allow: /notes/use_case_template/
 
 Allow: /notes/go_interfaces/
 
+Allow: /notes/database/
+
+Allow: /notes/postgres/
+
+Allow: /notes/list_foreign_key_constrants_defined_in_a_database/
+
 Allow: /notes/go_reading_struct_tag/
+
+Allow: /notes/go_defer/
+
+Allow: /notes/antifa/
 
 Allow: /notes/weed/
 
