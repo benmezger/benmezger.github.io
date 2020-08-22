@@ -1,6 +1,12 @@
 User-agent: *
 
 
+Allow: /tags/git/
+
+Allow: /notes/git_change_commit_author/
+
+Allow: /tags/
+
 Allow: /posts/automating-and-testing-dotfiles/
 
 Allow: /categories/blog/
@@ -15,11 +21,7 @@ Allow: /tags/dotfiles/
 
 Allow: /posts/
 
-Allow: /tags/
-
 Allow: /tags/testing/
-
-Allow: /tags/git/
 
 Allow: /notes/personal_git_workflow/
 
