@@ -1,11 +1,27 @@
 User-agent: *
 
 
+Allow: /posts/automating-and-testing-dotfiles/
+
+Allow: /categories/blog/
+
+Allow: /categories/
+
+Allow: /tags/ci/
+
+Allow: /tags/config/
+
+Allow: /tags/dotfiles/
+
+Allow: /posts/
+
+Allow: /tags/
+
+Allow: /tags/testing/
+
 Allow: /tags/git/
 
 Allow: /notes/personal_git_workflow/
-
-Allow: /tags/
 
 Allow: /tags/workflow/
 
@@ -222,12 +238,6 @@ Allow: /notes/information_theory/
 Allow: /tags/studies/
 
 Allow: /posts/attaching-jira-issues-to-commits/
-
-Allow: /categories/blog/
-
-Allow: /categories/
-
-Allow: /posts/
 
 Allow: /tags/projects/
 
