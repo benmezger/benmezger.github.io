@@ -47,6 +47,8 @@ Allow: /tags/emacs/
 
 Allow: /notes/using_macros_in_emacs/
 
+Allow: /menu/
+
 Allow: /tags/books/
 
 Allow: /notes/data_and_reality_a_timeless_perspective_on_perceiving_and_managing_information_in_our_imprecise_world/
@@ -248,8 +250,6 @@ Allow: /posts/http-hooks-with-custom-arguments/
 Allow: /categories/kernel/
 
 Allow: /posts/writting-a-kernel-part-1/
-
-Allow: /menu/
 
 Allow: /categories/about/
 
