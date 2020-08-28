@@ -1,29 +1,25 @@
 User-agent: *
 
 
-Allow: /tags/archlinux/
+Allow: /tags/git/
+
+Allow: /notes/git_change_commit_author/
+
+Allow: /tags/
+
+Allow: /posts/automating-and-testing-dotfiles/
 
 Allow: /categories/blog/
 
 Allow: /categories/
 
-Allow: /tags/config/
+Allow: /tags/ci/
 
-Allow: /posts/creating-a-custom-archlinux-iso/
+Allow: /tags/config/
 
 Allow: /tags/dotfiles/
 
 Allow: /posts/
-
-Allow: /tags/
-
-Allow: /tags/git/
-
-Allow: /notes/git_change_commit_author/
-
-Allow: /posts/automating-and-testing-dotfiles/
-
-Allow: /tags/ci/
 
 Allow: /tags/testing/
 
