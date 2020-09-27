@@ -1,11 +1,15 @@
 User-agent: *
 
 
+Allow: /tags/emacs/
+
+Allow: /notes/emacs_search_and_replacing_versioned_controled_files/
+
+Allow: /tags/
+
 Allow: /tags/git/
 
 Allow: /notes/git_change_commit_author/
-
-Allow: /tags/
 
 Allow: /posts/automating-and-testing-dotfiles/
 
@@ -42,8 +46,6 @@ Allow: /tags/python/
 Allow: /notes/python_temporary_file/
 
 Allow: /notes/python_async/
-
-Allow: /tags/emacs/
 
 Allow: /notes/using_macros_in_emacs/
 
