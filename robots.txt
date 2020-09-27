@@ -7,6 +7,16 @@ Allow: /notes/emacs_search_and_replacing_versioned_controled_files/
 
 Allow: /tags/
 
+Allow: /tags/algorithms/
+
+Allow: /tags/go/
+
+Allow: /notes/go_binary_search_tree/
+
+Allow: /tags/programming/
+
+Allow: /notes/go_context_package/
+
 Allow: /tags/git/
 
 Allow: /notes/git_change_commit_author/
@@ -39,8 +49,6 @@ Allow: /tags/politics/
 
 Allow: /tags/libs/
 
-Allow: /tags/programming/
-
 Allow: /tags/python/
 
 Allow: /notes/python_temporary_file/
@@ -70,8 +78,6 @@ Allow: /tags/software/
 Allow: /notes/software_engineering/
 
 Allow: /notes/use_case_template/
-
-Allow: /tags/go/
 
 Allow: /notes/go_interfaces/
 
