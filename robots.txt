@@ -277,6 +277,16 @@ Allow: /tags/security/
 
 Allow: /posts/notes-on-linux-printk/
 
+Allow: /tags/guide/
+
+Allow: /posts/higiene-e-bons-habitos-online/
+
+Allow: /tags/private/
+
+Allow: /tags/services/
+
+Allow: /posts/mantendo-sua-privacidade-online/
+
 Allow: /notes/a_brief_introduction_to_emacs_lisp_for_people_with_programming_background_lgmoneda/
 
 Allow: /notes/dots_config_el_at_master_jethrokuan_dots/
