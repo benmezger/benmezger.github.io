@@ -1,19 +1,23 @@
 User-agent: *
 
 
+Allow: /tags/checklist/
+
+Allow: /tags/programming/
+
+Allow: /tags/
+
+Allow: /notes/technical_challenge_checklist/
+
 Allow: /tags/emacs/
 
 Allow: /notes/emacs_search_and_replacing_versioned_controled_files/
-
-Allow: /tags/
 
 Allow: /tags/algorithms/
 
 Allow: /tags/go/
 
 Allow: /notes/go_binary_search_tree/
-
-Allow: /tags/programming/
 
 Allow: /notes/go_context_package/
 
