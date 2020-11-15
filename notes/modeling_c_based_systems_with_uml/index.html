@@ -1,0 +1,67 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="tags Software Engineering Methodologies  Introduction #  The Unified Modeling Language (UML) is used almost exclusively for Object Oriented Programming (OOP). Since embedded system design has become increasingly more complex, designers have been searching for new methodologies to manage these complexities and allowing higher productivity. Due to the exclusivity of UML for OOP, it makes it difficult for functional programmers to integrate UML concepts into the modeling because the transformation of many UML concepts to C is difficult and confusing (Wang 2009)."><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Modeling C-based systems with UML"><meta property="og:description" content="tags Software Engineering Methodologies  Introduction #  The Unified Modeling Language (UML) is used almost exclusively for Object Oriented Programming (OOP). Since embedded system design has become increasingly more complex, designers have been searching for new methodologies to manage these complexities and allowing higher productivity. Due to the exclusivity of UML for OOP, it makes it difficult for functional programmers to integrate UML concepts into the modeling because the transformation of many UML concepts to C is difficult and confusing (Wang 2009)."><meta property="og:type" content="article"><meta property="og:url" content="https://seds.nl/notes/modeling_c_based_systems_with_uml/"><meta property="article:published_time" content="2020-11-14T12:54:00-03:00"><meta property="article:modified_time" content="2020-11-15T02:57:05-03:00"><title>Modeling C-based systems with UML | Ben Mezger</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.2325c70fa3cade82423268ec11adc30170a335956bffb8083f42063b3d4efbbb.css integrity="sha256-IyXHD6PK3oJCMmjsEa3DAXCjNZVr/7gIP0IGOz1O+7s="><script defer src=/en.search.min.c886b0522b3d6e37b2df9d192f633ce772bd0c56ea3eb14fa8b9a97b95907a67.js integrity="sha256-yIawUis9bjey350ZL2M853K9DFbqPrFPqLmpe5WQemc="></script><script defer src=/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js integrity="sha256-dKi7B/C+6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-138318350-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><link type=text/css rel=stylesheet href=/assets/css/orgmode.css><link type=text/css rel=stylesheet href=/assets/css/custom.css></head><body><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/><span>Ben Mezger</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/books/>Books</a></li></ul><ul><li><a href=/posts>Blog</a></li><li><a href=/notes>Notes</a></li><li><strong>Social</strong><ul><li><a href=https://github.com/benmezger/>Github</a></li><li><a href=https://linkedin.com/in/benmezger>Linkedin</a></li><li><a href=https://twitter.com/sys%5Freboot>Twitter</a></li><li><a href=/index.xml>RSS</a></li></ul></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Modeling C-based systems with UML</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><ul><li><a href=#introduction>Introduction</a><ul><li><a href=#unified-modeling-language--uml>Unified Modeling Language (UML)</a></li></ul></li><li><a href=#uml-to-c><span class="org-todo todo TODO">TODO</span> UML To C</a></li><li><a href=#references>References</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1><a href=/notes/modeling_c_based_systems_with_uml/>Modeling C-based systems with UML</a></h1><h5>November 14, 2020</h5><div><a href=/tags/programming/>programming</a>,
+<a href=/tags/c/>C</a>,
+<a href=/tags/methodologies/>methodologies</a></div><p><dl><dt>tags</dt><dd><a href=/notes/software_engineering/>Software Engineering</a>
+<a href=/notes/methodologies/>Methodologies</a></dd></dl><h2 id=introduction>Introduction
+<a class=anchor href=#introduction>#</a></h2><p>The Unified Modeling Language (UML) is used almost exclusively for
+Object Oriented Programming (OOP). Since embedded system design has
+become increasingly more complex, designers have been searching for new
+methodologies to manage these complexities and allowing higher
+productivity. Due to the exclusivity of UML for OOP, it makes it
+difficult for functional programmers to integrate UML concepts into the
+modeling because the transformation of many UML concepts to C is
+difficult and confusing (Wang 2009).</p><p>The problem when integrating UML tools into modeling a embedded system
+happens because programmers require to two different ways of thinking:
+(i) OO way and (ii) functional oriented way. Wang (2009) presents a set
+of mapping rules on which allows UML to be applied in modeling embedded
+system.</p><h3 id=unified-modeling-language--uml>Unified Modeling Language (UML)
+<a class=anchor href=#unified-modeling-language--uml>#</a></h3><p>There are six basic UML elements:</p><ol><li>Class Defines the state, attributes and behaviour. It can be called
+active or abstract. The active class means a thread class that has a
+defined state, behaviour, attributes and has the instances of it as
+objects. A class can be abstract when it is in one or more states,
+when operations or behavior are not completely defined, when in an
+abstract stage, or when it is not for creating objects but only
+inheritance can create the objects.</li><li>Package A packed collection of classes and objects.</li><li>Stereotype</li><li>Object An instance of a class that is a functional entity formed by
+copying the states, attributes and behavior from a class.</li><li>Anonymous object</li><li>State A defined state, for example, rounded rectangle with state
+name for its identity.</li></ol><p>A conceptual design can use the User Case Diagram (UCD), Object Model
+Diagram (OMD), Structure Diagram (SD), Sequence Diagram (SD), Activity
+Diagram and State-chart UML approaches.</p><ol><li>Use Case Diagram Shows the main functions of the system (use case)
+and the entities that are outside the system (actors). UCDs show how
+classes and objects interact with each other. UCDs allow
+requirements specifications for the system and the interactions
+between the system and external actors.</li><li>Structure Diagram Helps defining the system structure and identify
+large-scale organizational pieces of the system. It allows flow
+visualization of information between system components and the
+interface definition through ports.</li><li>Object Model Diagram Specifies the structure of the classes, objects
+and interfaces in the system and the static relationship that exist
+between them.</li><li>Sequence Diagram Describes how structural elements communicate with
+one another over time and identifies the required relationships and
+messages.</li><li>Activity Diagram Describes the dynamic aspects of a system and the
+flow of control from activity to activity, allowing visualization of
+interactions between the system, the environment and the
+interconnections of behaviors for which the subsystem or components
+are responsible.</li><li>State-chart Defines the behavior of classifiers (actors, use case or
+classes), objects, including the states they may enter over their
+lifetime, messages, events or operations on which causes the
+transition from state to state.</li></ol><h2 id=uml-to-c><span class="org-todo todo TODO">TODO</span> UML To C
+<a class=anchor href=#uml-to-c>#</a></h2><p>A C-language software is a function oriented design with header files,
+function files, local and global variables, flow charts, state diagram
+and etc. Due to UML having no direct support for C-language, Wang (2009)
+does not cover all the aspects of the code, but rather replaces or
+transforms some of the feature.</p><blockquote><p>In this strategy, we provide rules for UML elements used only the
+adopted set of diagram types. Every use case in the UCDs can describe
+two C files (one .c and another .h header file) because each use case
+defines a behavior yielding an observable result and in order to reuse
+the result a use can be included by another use case (Wang 2009).</p><p>Sequence diagrams identify the sequence of function calls. In the case
+where a system object can have different states, as specified in the
+State Machines, it can be described using UML statecharts. The
+Activity Diagram in UML can represent the flowchart for a function
+use. Event triggers in those diagrams are implemented by triggering
+the timers, the user inputs, and interrupts, etc (Wang 2009).</p></blockquote><h2 id=references>References
+<a class=anchor href=#references>#</a></h2><div id=refs class="references hanging-indent"><div></div><div id=ref-wang2009modeling><div></div><p>Wang, Guoping. 2009. &ldquo;Modeling c-Based Embedded System Using Uml
+Design.&rdquo; In <em>2009 International Conference on Mechatronics and
+Automation</em>, 2973&ndash;7. IEEE.</p></div></div></p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/benmezger/blog/commit/c7d6d45a22bf0a20ee5808376260a4bc03180fe7 title="Last modified by Ben Mezger | November 15, 2020" target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>November 15, 2020</span></a></div><div><a class="flex align-center" href=https://github.com/benmezger/blog/edit/main/content/notes/2020-11-14--15-54-42Z--modeling_c_based_systems_with_uml.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>Edit this page</span></a></div></div></footer><div class=book-comments><script src=https://utteranc.es/client.js repo=benmezger/blog label=comment issue-term=pathname theme=github-dark crossorigin=anonymous async></script></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><ul><li><a href=#introduction>Introduction</a><ul><li><a href=#unified-modeling-language--uml>Unified Modeling Language (UML)</a></li></ul></li><li><a href=#uml-to-c><span class="org-todo todo TODO">TODO</span> UML To C</a></li><li><a href=#references>References</a></li></ul></li></ul></nav></aside></main></body></html>

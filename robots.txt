@@ -1,11 +1,17 @@
 User-agent: *
 
 
-Allow: /tags/checklist/
+Allow: /tags/c/
+
+Allow: /tags/methodologies/
+
+Allow: /notes/modeling_c_based_systems_with_uml/
 
 Allow: /tags/programming/
 
 Allow: /tags/
+
+Allow: /tags/checklist/
 
 Allow: /notes/technical_challenge_checklist/
 
@@ -172,8 +178,6 @@ Allow: /tags/riscv/
 Allow: /tags/thesis/
 
 Allow: /notes/thesis/
-
-Allow: /tags/c/
 
 Allow: /notes/c-programming/
 
