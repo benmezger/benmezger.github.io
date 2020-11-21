@@ -1,6 +1,14 @@
 User-agent: *
 
 
+Allow: /notes/bibliography/
+
+Allow: /tags/bibliography/
+
+Allow: /tags/research/
+
+Allow: /tags/
+
 Allow: /tags/c/
 
 Allow: /tags/methodologies/
@@ -8,8 +16,6 @@ Allow: /tags/methodologies/
 Allow: /notes/modeling_c_based_systems_with_uml/
 
 Allow: /tags/programming/
-
-Allow: /tags/
 
 Allow: /tags/checklist/
 
