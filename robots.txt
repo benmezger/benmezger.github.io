@@ -1,13 +1,19 @@
 User-agent: *
 
 
+Allow: /notes/bit_shifting/
+
+Allow: /tags/computer-science/
+
+Allow: /tags/math/
+
+Allow: /tags/
+
 Allow: /notes/bibliography/
 
 Allow: /tags/bibliography/
 
 Allow: /tags/research/
-
-Allow: /tags/
 
 Allow: /tags/c/
 
@@ -162,8 +168,6 @@ Allow: /tags/snippets/
 Allow: /notes/binary-calculation/
 
 Allow: /notes/math/
-
-Allow: /tags/math/
 
 Allow: /tags/calculus/
 
