@@ -3,7 +3,6 @@
 <strong>hugo</strong>
 <label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav><ul><li class=book-section-flat><strong>Categories</strong><ul><li class="flex justify-between"><a href=/categories/blog/>blog</a>
 <span>9</span></li><li class="flex justify-between"><a href=/categories/kernel/>kernel</a>
-<span>1</span></li><li class="flex justify-between"><a href=/categories/about/>about</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/books/>books</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/web/>web</a>
 <span>2</span></li></ul></li><li class=book-section-flat><strong>Tags</strong><ul><li class="flex justify-between"><a href=/tags/computer-science/>computer-science</a>
@@ -77,7 +76,6 @@
 From: jethrokuan/dots
 (defun benmezger/org-roam-export-all () "Re-exports all Org-roam files to Hugo markdown." (interactive) (dolist (f (org-roam--list-all-files)) (with-current-buffer (find-file f) (when (s-contains? "SETUPFILE" (buffer-string)) (org-hugo-export-wim-to-md))))) Adding an empty #+SETUPFILE: forces benmezger/org-roam-export-all to export the file.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav><ul><li class=book-section-flat><strong>Categories</strong><ul><li class="flex justify-between"><a href=/categories/blog/>blog</a>
 <span>9</span></li><li class="flex justify-between"><a href=/categories/kernel/>kernel</a>
-<span>1</span></li><li class="flex justify-between"><a href=/categories/about/>about</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/books/>books</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/web/>web</a>
 <span>2</span></li></ul></li><li class=book-section-flat><strong>Tags</strong><ul><li class="flex justify-between"><a href=/tags/computer-science/>computer-science</a>

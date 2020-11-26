@@ -277,8 +277,6 @@ Allow: /categories/kernel/
 
 Allow: /posts/writting-a-kernel-part-1/
 
-Allow: /categories/about/
-
 Allow: /books/
 
 Allow: /categories/books/

@@ -3,7 +3,6 @@
 <strong>sql</strong>
 <label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav><ul><li class=book-section-flat><strong>Categories</strong><ul><li class="flex justify-between"><a href=/categories/blog/>blog</a>
 <span>9</span></li><li class="flex justify-between"><a href=/categories/kernel/>kernel</a>
-<span>1</span></li><li class="flex justify-between"><a href=/categories/about/>about</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/books/>books</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/web/>web</a>
 <span>2</span></li></ul></li><li class=book-section-flat><strong>Tags</strong><ul><li class="flex justify-between"><a href=/tags/computer-science/>computer-science</a>
@@ -75,7 +74,6 @@
 select kcu.table_schema || '.' ||kcu.table_name as foreign_table, '>-' as rel, rel_tco.table_schema || '.' || rel_tco.table_name as primary_table, string_agg(kcu.column_name, ', ') as fk_columns, kcu.constraint_name from information_schema.table_constraints tco join information_schema.key_column_usage kcu on tco.constraint_schema = kcu.constraint_schema and tco.constraint_name = kcu.constraint_name join information_schema.referential_constraints rco on tco.constraint_schema = rco.constraint_schema and tco.constraint_name = rco.constraint_name join information_schema.table_constraints rel_tco on rco.unique_constraint_schema = rel_tco.
 <a href=/notes/list_foreign_key_constrants_defined_in_a_database/>...</a></p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav><ul><li class=book-section-flat><strong>Categories</strong><ul><li class="flex justify-between"><a href=/categories/blog/>blog</a>
 <span>9</span></li><li class="flex justify-between"><a href=/categories/kernel/>kernel</a>
-<span>1</span></li><li class="flex justify-between"><a href=/categories/about/>about</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/books/>books</a>
 <span>1</span></li><li class="flex justify-between"><a href=/categories/web/>web</a>
 <span>2</span></li></ul></li><li class=book-section-flat><strong>Tags</strong><ul><li class="flex justify-between"><a href=/tags/computer-science/>computer-science</a>
