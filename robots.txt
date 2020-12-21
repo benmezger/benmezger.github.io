@@ -1,13 +1,23 @@
 User-agent: *
 
 
+Allow: /tags/mmu/
+
+Allow: /notes/notes_on_os_memory_management/
+
+Allow: /tags/os/
+
+Allow: /tags/
+
 Allow: /notes/bit_shifting/
 
 Allow: /tags/computer-science/
 
 Allow: /tags/math/
 
-Allow: /tags/
+Allow: /tags/architecture/
+
+Allow: /notes/translating_virtual_addresses/
 
 Allow: /notes/bibliography/
 
@@ -104,8 +114,6 @@ Allow: /notes/use_case_template/
 Allow: /notes/go_interfaces/
 
 Allow: /notes/database/
-
-Allow: /tags/architecture/
 
 Allow: /notes/postgres/
 
