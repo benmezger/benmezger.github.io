@@ -1,0 +1,219 @@
+<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.74.3"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="❗️Note: This was a class homework for my Master’s at the Federal University of Rio Grande do Sul and was not peer reviewed. It’s intention was to write a review of some presentation from the SERESSA-2020 event.
+ Introduction #  With the continuing trend of higher density devices for faster processing and lower requirement of electric charge, a comparable amount of charge can be generated in the semiconductor by the passage of cosmic rays or alpha particles."><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Software and Hardware Single Event Effect mitigation"><meta property="og:description" content="❗️Note: This was a class homework for my Master’s at the Federal University of Rio Grande do Sul and was not peer reviewed. It’s intention was to write a review of some presentation from the SERESSA-2020 event.
+ Introduction #  With the continuing trend of higher density devices for faster processing and lower requirement of electric charge, a comparable amount of charge can be generated in the semiconductor by the passage of cosmic rays or alpha particles."><meta property="og:type" content="article"><meta property="og:url" content="https://seds.nl/posts/see-hardware-and-software-mitigation/"><meta property="article:published_time" content="2021-02-06T00:00:00+00:00"><meta property="article:modified_time" content="2021-02-06T19:04:54-03:00"><title>Software and Hardware Single Event Effect mitigation | Ben Mezger</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.2325c70fa3cade82423268ec11adc30170a335956bffb8083f42063b3d4efbbb.css integrity="sha256-IyXHD6PK3oJCMmjsEa3DAXCjNZVr/7gIP0IGOz1O+7s="><script defer src=/en.search.min.408f46491385316c9e1bb6913c7a37c13d6c18518554c38dc7f0a10106ee240a.js integrity="sha256-QI9GSROFMWyeG7aRPHo3wT1sGFGFVMONx/ChAQbuJAo="></script><script defer src=/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js integrity="sha256-dKi7B/C+6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-138318350-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><link type=text/css rel=stylesheet href=/assets/css/orgmode.css><link type=text/css rel=stylesheet href=/assets/css/custom.css></head><body><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><nav><h2 class=book-brand><a href=/><span>Ben Mezger</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/books/>Books</a></li></ul><ul><li><a href=/posts>Blog</a></li><li><a href=/notes>Notes</a></li><li><strong>Social</strong><ul><li><a href=https://github.com/benmezger/>Github</a></li><li><a href=https://linkedin.com/in/benmezger>Linkedin</a></li><li><a href=https://twitter.com/sys%5Freboot>Twitter</a></li><li><a href=/index.xml>RSS</a></li></ul></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Software and Hardware Single Event Effect mitigation</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#introduction>Introduction</a></li><li><a href=#background>Background</a></li><li><a href=#hardware-mitigation>Hardware Mitigation</a></li><li><a href=#software-mitigation>Software Mitigation</a></li><li><a href=#conclusions>Conclusions</a></li></ul></li><li><a href=#bibliography>Bibliography</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1><a href=/posts/see-hardware-and-software-mitigation/>Software and Hardware Single Event Effect mitigation</a></h1><h5>February 6, 2021</h5><div><a href=/categories/blog/>blog</a></div><div><a href=/tags/fault-tolerance/>fault-tolerance</a>,
+<a href=/tags/see/>see</a>,
+<a href=/tags/software/>software</a>,
+<a href=/tags/hardware/>hardware</a></div><p><blockquote><p>❗️Note: This was a class homework for my Master’s at the Federal University of
+Rio Grande do Sul and was not peer reviewed. It’s intention was to write a
+review of some presentation from the <a href=https://www.ufrgs.br/seressa2020/>SERESSA-2020</a> event.</p></blockquote><h3 id=introduction>Introduction
+<a class=anchor href=#introduction>#</a></h3><p>With the continuing trend of higher density devices for faster
+processing and lower requirement of electric charge, a comparable amount
+of charge can be generated in the semiconductor by the passage of cosmic
+rays or alpha particles. These charges may, for example, temporarily
+change memory contents or commands in a given instruction stream. The
+effects of radiation regarding space-borne electronic systems may
+penetrate sensitive nodes in these devices and affect its system
+functions and behavior (<a href=#orge0bcb32>Petersen, n.d.</a>).</p><p>The first satellite inconsistency was first reported in 1975, by D.
+Binder <em>et. al</em> on SEU in flip-flops. In 1978, the first SEU was first
+observed on earth by alpha particles, caused by packaging material in a
+chip and eventually affecting the ram. In 1979, the first report on SEU
+due to comic rays was published, and in 1992, the first destructive see
+was observed in a memory on a space operating resource satellite
+(<a href=#orgbb7d9f6>Buchner 2015</a>).</p><p>The phenomenon of see arises when a single energetic particle penetrates
+these sensitive nodes, causing glitches to the electronic system or
+catastrophic failures at the circuit level
+(<a href=#orge0bcb32>Petersen, n.d.</a>). With a variety of possible see,
+they can either be transient, permanent, or intermittent.</p><p>Faults that may affect the system during its lifetime can be classified
+into eight basic viewpoints of phenomenological causes, being of: (i)
+natural faults, caused by natural phenomena without human interaction;
+(ii) human-made faults, resulted by human interaction such as production
+defects; (iii) transient faults, presented within a bounded time-frame; and
+(iv) permanent faults, given within a continuous time-frame
+(<a href=#org9e74f36>Avizienis et al. 2004</a>). This paper aims at
+reviewing transient fault mitigation.</p><p>During the system operation, natural faults can be either internal, due
+to the natural process of physical deterioration, or external, due to
+the natural process that happens outside the system boundaries and may
+cause hardware interference (<a href=#org9e74f36>Avizienis et al. 2004</a>).</p><p>In fault-tolerant architecture, a fault is a physical defect, such as a
+broken transistor. These faults may manifest themselves as an error,
+such that having a bit 0 in place of a bit 1, or by not manifesting
+itself as an error. An error can be masked or can result in a
+user-visible failure (<a href=#org0d1f5b4>Sorin 2009</a>).</p><p>A fault and/or error does not necessarily become an error and/or a
+fault, respectively. This can be mitigated by masking the system at the
+design level. The effect of an error at a logical level may not affect
+the system, and may not propagate to the architectural level either, as
+it depends on which instruction the error will impact. Errors that
+propagate to the application level may not be impacted by an error
+either, as the error may affect an unused memory location by the
+application and never gets triggered
+(<a href=#org0d1f5b4>Sorin 2009</a>).</p><p>A transient fault may occur once and not persist across the system,
+these are often referred to as <em>soft error</em> or as SEU. Permanent faults
+are often called <em>hard fault</em>, and persists when the fault occurs and
+may manifest itself as a repeated error. An intermittent fault occurs
+repeatedly but not over the same place in the system
+(<a href=#org0d1f5b4>Sorin 2009</a>).</p><p>Radiation device hardening and see fault tolerance approaches have been taken to
+mitigate these issues when they arise
+(<a href=#orge0bcb32>Petersen, n.d.</a>), however, the mitigation
+approaches are dependent on their fault duration, as tolerating a transient
+fault requires no self-repair due to its non-persistence. Fault tolerance
+schemes may treat intermittent faults as either transient or permanent,
+depending on how often they occur in the system
+(<a href=#org0d1f5b4>Sorin 2009</a>).</p><p>Due to the many physical phenomena that may lead to a fault, a variety
+of techniques are available for mitigating these issues according to the
+environment they run. Due to the transient high-energy particles, cosmic
+rays may produce alpha particles or even electromagnetic interference
+from outside sources, generating transient faults to the devices
+(<a href=#orge0bcb32>Petersen, n.d.</a>).</p><p>The effects of the fault may change a value of a cell or transistor
+output. Due to the one-time disruption, the error will vanish once the
+cell or transistor’s output is overwritten.
+(<a href=#org0d1f5b4>Sorin 2009</a>) categorizes permanent
+phenomena into three categories: (i) permanent wear-out, making a
+processor fail due to several physical issues such as thermal cycling
+and mechanical stress; (ii) fabrication defects, by manufacturing chips
+with inherent defects; and (iii) design bugs, such as a chip not behaving
+correctly due to an internal bug. Some physical phenomena may lead to
+intermittent faults, such as loss of connection between two wires or
+devices.</p><p>This work aims at characterizing the types of see and the state-of-the-art that
+has been accomplished to mitigate these issues at the circuit- and
+software-level. The rest of the paper is organized as follows: section <a href=#org7f1ea1d>2</a> gives a
+brief background over the types of see and how they may affect the system, among
+with fault metrics and types of errors, section <a href=#org4b09b6e>3</a> present some techniques for
+mitigating single events at the circuit level, section <a href=#org026b2c4>4</a> refers to
+software-based approaches for single event mitigation. Finally, section <a href=#orgefc35a8>5</a>
+provides final conclusions.</p><h3 id=background>Background
+<a class=anchor href=#background>#</a></h3><p><a id=org7f1ea1d></a>With the decrease of dimension size of transistors, wires, and smaller chips,
+the tendency to transient and permanent faults are much higher, as the dimension
+of the chip may impact the temperature directly. Given Moore’s law increase the
+number of transistors per chip, more opportunities arise for faults in the field
+of application and manufacturing. The complexity of processor design increases
+the likelihood of design bugs during production, which may bring permanent
+faults to the processor during execution time
+(<a href=#org0d1f5b4>Sorin 2009</a>). This section overviews the
+types of SEE and how they arise during the life-type of a system.</p><h4 id=types-of-see>Types of Single Event Effect
+<a class=anchor href=#types-of-see>#</a></h4><p>SEE depends on the interaction of a single particle penetrating the device,
+which can be caused by the passage of a single heavy ion by a cosmic ray. As
+cosmic rays are highly energetic in space, they may pass through the device and
+be collected in the device’s electrodes. The ion produces an electric pulse that
+may appear to the device as if it should respond and eventually causing a
+failure. High energy protons can also be a cause of failure, as a proton may
+have a nuclear reaction in the silicon device
+(<a href=#orge0bcb32>Petersen, n.d.</a>).</p><p>SEE has a variety of possible effects, each of which is important, as they cause
+malfunctioning of devices in space ionizing radiation environment
+(<a href=#orge0bcb32>Petersen, n.d.</a>). These SEE is illustrated in
+Table <a href=#table--table:types-of-see>1</a> with their respective description.</p><p><a id=table--table:types-of-see></a></p><div class=table-caption><span class=table-number><a href=#table--table:types-of-see>Table 1</a></span>:
+Types of Single Event Effect</div><table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody><tr><td>Single event upset</td><td>A change of state or transient induced by an energetic particle</td></tr><tr><td>Single hard error</td><td>Causes permanent changes to the operation of the device</td></tr><tr><td>Single event latch-up</td><td>Loss of device functionality induced by high current</td></tr><tr><td>Single event burnout</td><td>A condition which causes a device to destruct due to high current state in a power transistor</td></tr><tr><td>Single event effect</td><td>A measurable effect to a circuit due to an ion strike</td></tr><tr><td>Multiple bit upset</td><td>Event induced by a single energetic particle which may cause multiple upsets or transient</td></tr><tr><td>Linear energy transfer</td><td>A measure of energy deposited per unit length</td></tr></tbody></table><h4 id=fault-tolerance-metric>Fault tolerance metric
+<a class=anchor href=#fault-tolerance-metric>#</a></h4><p>Fault tolerance solution requires experiments to test a hypothesis or compare
+with previous works and knowing which errors may apply within the system.
+(<a href=#org0d1f5b4>Sorin 2009</a>) covers several important metrics
+on fault tolerance systems, those including (i) the availability of the system,
+by verifying the system is functioning correctly at a specific time; and (ii)
+reliability, is the probability that the system has been functioning correctly
+from time zero to a specific time.</p><h4 id=error-detection>Error detection
+<a class=anchor href=#error-detection>#</a></h4><p>Error detection provides a measure of safety, as it is an important aspect of
+fault tolerance since the processor cannot tolerate a problem it is not aware
+of. Redundancy is fundamental to error detection, as it helps the processor
+detect when a given error occurs. There are three classes of redundancy,
+spatial, temporal and information redundancy
+(<a href=#org0d1f5b4>Sorin 2009</a>).</p><p>Spatial redundancy adds redundant hardware to the system. The DMR is a simple
+form of spatial redundancy, which provides error detection by using a voter
+system, which then receives the output of all modules and checks for any error
+(<a href=#org0d1f5b4>Sorin 2009</a>).</p><p>Temporal redundancy may perform redundant operations, by requiring a unit to
+operate twice and finally compare the results. Temporal redundancy doubles the
+amount of time for each operation. However, in comparison to Spatial redundancy,
+there is no extra hardware or power cost involved. For reducing performance
+cost, some schemes may use pipelining to hide the latency of a redundant
+operation (<a href=#org0d1f5b4>Sorin 2009</a>).</p><p>Finally, information redundancy detects when a datum has been affected by adding
+bits to it. Schemes such as EDC can be used for such redundancy, for example, by
+adding a parity bit to a data word and convert into a codeword. The parity
+scheme is popular, due to its simplicity and inexpensive implementation
+(<a href=#org0d1f5b4>Sorin 2009</a>).</p><h4 id=error-recovery>Error recovery
+<a class=anchor href=#error-recovery>#</a></h4><p>Error detection is enough for providing safety to the system, but not recovering
+from the error. By recovering from the error, it hides the effect of the error
+from the end-user and allows the system to resume operation
+(<a href=#org0d1f5b4>Sorin 2009</a>). Two primary approaches to error
+recovering is FER and BER.</p><p>FER corrects the error without having to revert to a previous state. FER can be
+implemented through physical, temporal, and information means of redundancy. In
+fer, if a specific amount of redundancy is required to determine if an error has
+occurred, then additional redundancy is required to correct the error
+(<a href=#org0d1f5b4>Sorin 2009</a>).</p><p>BER restores the state of the system to a previously known good state, known as
+recovery point on single-core systems and recovery-line on multi-core systems.
+The system architect should think through what state it should be saved for
+recovery, where and when to deallocate, the algorithm, and what to do after the
+system has been restored (<a href=#org0d1f5b4>Sorin 2009</a>).</p><h3 id=hardware-mitigation>Hardware Mitigation
+<a class=anchor href=#hardware-mitigation>#</a></h3><p><a id=org4b09b6e></a></p><h4 id=soft-errors>Soft errors
+<a class=anchor href=#soft-errors>#</a></h4><p>(<a href=#orgd32f056>Reis et al. 2020</a>) explores four single transient mitigation
+by evaluating four techniques that can be applied at the circuit level. These
+techniques are covered in the next sub-sections.</p><ul><li><p>Schmitt Triggers</p><p>In high noise applications, the st works as a replacement for the internal
+inverter of a circuit. The st has a higher dependency over a source-gate voltage
+of its P1 and N1 transistors, resulting in an enhanced robustness over a VTC
+deviation (<a href=#orgd32f056>Reis et al. 2020</a>).</p></li></ul><ul><li><p>Decoupling Cells</p><p>By connecting capacity elements to the most exposed nodes, one can mitigate
+transient effects. The use of decoupling cells increases the total capacity in
+the output of a node of the NAND2 gate, resulting in a decrease of critical
+charge required to produce a single transient pulse, which by effect improves
+signal degradation (<a href=#orgd32f056>Reis et al. 2020</a>).</p></li></ul><ul><li><p>Sleep Transistors</p><p>Circuit blocks that are not in use can be shut off by using the power-gating
+strategy, widely used in low-power designs for reducing chip’s power
+consumption. Sleep transistors act as a supply-voltage regulator. When a sleep
+transistor is in active mode, it improves the process variability of a typical
+logic gate connection to the ground rail by acting as a voltage regulator. While
+in standby, the sleep transistor disconnects the virtual ground from the
+physical ground (<a href=#orgd32f056>Reis et al. 2020</a>).</p></li></ul><ul><li><p>Transistor Reordering</p><p>Optimizing transistors arrangements allows reducing current leakage or dealing
+with bias temperature instability. This technique modifies the transistor
+arrangement by still keeping the same functionality that was aimed at. The
+transistor reordering swaps the electrical and physical characteristics of the
+logic cells, resulting in susceptibility to soft errors. The robustness of
+complex gates where can be improved up to 8% by using this approach and can be
+favorable to improve single effect stability of circuits without including area
+penalty in complex gates (<a href=#orgd32f056>Reis et al. 2020</a>).</p></li></ul><h3 id=software-mitigation>Software Mitigation
+<a class=anchor href=#software-mitigation>#</a></h3><p><a id=org026b2c4></a>Software approaches can also be used for hardware errors. The primary interest
+of using a software redundancy is that it brings no hardware cost and requires
+no hardware modification. The software approach may provide good coverage of
+possible errors and can be easily tested comparing to hardware approaches. The
+cost of software redundancy may be significant, as performance may be lost
+depending on the core model and software workload, as instruction duplication
+requires more processing (<a href=#org0d1f5b4>Sorin 2009</a>). The
+following presents some solutions for software-based mitigation</p><h4 id=selective-code-duplication>Selective Code Duplication
+<a class=anchor href=#selective-code-duplication>#</a></h4><p>In Selective code duplication, only parts of the code are duplicated, and their
+results are compared, which reduces fault coverage but improves code size and
+execution time overhead. Multiple techniques use selective code duplication,
+such as SWIFT, VAR3+, CDB, and SEDSR.</p><ul><li><p>Error detection by duplicated instructions</p><p>EDDI consists of inserting redundant instructions and instructions that also
+compares the results produced by the original instruction and the redundant
+instructions (<a href=#org0d1f5b4>Sorin 2009</a>). The SWIFT scheme
+by (<a href=#org13b925e>Reis et al. 2005</a>)} improved upon EDDI by combining with the control
+flow checking and optimizing the performance by reducing the number of
+comparison instructions.</p><p>(<a href=#org8cdf72f>James et al. 2019</a>) provides a tool named coast, which provides an automated
+compiler modification of software to insert a dual- or triple-modular
+redundancy. The approach adds data flow protection to user-provided programs. By
+default, the tool replicates all compute operations and memory loads/stores.
+while keeping a single set of control flow operations. The coast tool provides
+DWC and TMR protection mode. The replication and/or synchronization of
+instructions is fully automated as part of the compilation process. The produced
+software executable is are more tolerant to SEU, ideal for processing in a high
+radiation environment. Experiments were conducted in 30R flight path at the
+lansce, and neutron beam tests have shown that coast provides a significant
+increase in MWTF.</p></li></ul><ul><li><p>Error detection by diverse data and duplicated instructions</p><p>EDDDDI is a full code duplication technique, where all instructions in a block
+are duplicated. Comparison instructions are placed after each original and
+duplicated instruction in each block to compare their results
+(<a href=#orgf8f977b>Thati et al. 2018</a>).</p></li></ul><ul><li><p>Overhead reduction</p><p>In a VAR3 technique, all instructions in a block, except for branch and store
+instructions are duplicated. The comparison instructions have to be placed
+before load, store, and branch instructions to compare the results
+(<a href=#orgf8f977b>Thati et al. 2018</a>).</p></li></ul><ul><li><p>Critical block duplication</p><p>In CBD technique, critical blocks have to be identified in the control flow
+graph. Any block which has the highest number of fan-outs in the control flow
+graph is considered a critical block. If any mismatch of results is detected, an
+error is reported (<a href=#orgf8f977b>Thati et al. 2018</a>).</p></li></ul><h4 id=soft-error-detection-using-software-redundancy>Soft error detection using software redundancy
+<a class=anchor href=#soft-error-detection-using-software-redundancy>#</a></h4><p>SEDSR in an extended version of DBD, however, comparison instructions have to be
+added after the original and duplicated instruction in each identified block for
+comparing results (<a href=#orgf8f977b>Thati et al. 2018</a>).</p><h3 id=conclusions>Conclusions
+<a class=anchor href=#conclusions>#</a></h3><p><a id=orgefc35a8></a>With the continuous trend of smaller chip sizes, the tendency of transient and
+permanent faults are much higher. This paper sought to characterize the types of
+SEE and how they affect a system according to the environment, and what metrics
+are important when considering a fault-tolerant design. By understanding the
+difference between error detection and error recovery allows one to seek a
+solution which may fit their requirements. Multiple fields of mitigation’s have
+been reviewed, from a circuit-level techniques to software-level approaches.
+Although software mitigation usually impacts performance, it is a cheaper
+alternative in comparison to hardware alternatives.</p><h2 id=bibliography>Bibliography
+<a class=anchor href=#bibliography>#</a></h2><p><a id=org9e74f36></a>Avizienis, A., J. -. Laprie, B. Randell, and C. Landwehr. 2004. “Basic Concepts and Taxonomy of Dependable and Secure Computing.” <em>IEEE Transactions on Dependable and Secure Computing</em> 1 (1):11–33.</p><p><a id=orgbb7d9f6></a>Buchner, S. 2015. <em>Overview of Single Event Effects</em>. <em>Proc. 11th Int. School Effects Radiation Embedded Syst. Space Appl.(SERESSA)</em>.</p><p><a id=org8cdf72f></a>James, Benjamin, Heather Quinn, Michael Wirthlin, and Jeffrey Goeders. 2019. “Applying Compiler-Automated Software Fault Tolerance to Multiple Processor Platforms.” <em>IEEE Transactions on Nuclear Science</em> 67 (1). IEEE:321–27.</p><p><a id=orge0bcb32></a>Petersen, Edward. n.d. <em>Single Event Effects in Aerospace / Edward Petersen.</em> <em>Single Event Effects in Aerospace</em>. Piscataway, N.J.? IEEE Press.</p><p><a id=org13b925e></a>Reis, G. A., J. Chang, N. Vachharajani, R. Rangan, and D. I. August. 2005. “SWIFT: Software Implemented Fault Tolerance.” In <em>International Symposium on Code Generation and Optimization</em>, 243–54.</p><p><a id=orgd32f056></a>Reis, R., C. Meinhardt, A. L. Zimpeck, L. H. Brendler, and L. Moraes. 2020. “Circuit Level Design Methods to Mitigate Soft Errors.” In <em>2020 IEEE Latin-American Test Symposium (LATS)</em>, 1–3.</p><p><a id=org0d1f5b4></a>Sorin, Daniel J. 2009. <em>Fault Tolerant Computer Architecture</em>. Morgan and Claypool Publishers.</p><p><a id=orgf8f977b></a>Thati, Venu Babu, Jens Vankeirsbilck, Niels Penneman, Davy Pissoort, and Jeroen Boydens. 2018. “CDFEDT: Comparison of Data Flow Error Detection Techniques in Embedded Systems: An Empirical Study.” In <em>Proceedings of the 13th International Conference on Availability, Reliability and Security</em>. ARES 2018. New York, NY, USA: Association for Computing Machinery. <a href=https://doi.org/10.1145/3230833.3230854>https://doi.org/10.1145/3230833.3230854</a>.</p></p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/benmezger/blog/commit/ed96d3ae9cafcddcee78955bb84ae87d90bb7a5e title="Last modified by Ben Mezger | February 6, 2021" target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>February 6, 2021</span></a></div><div><a class="flex align-center" href=https://github.com/benmezger/blog/edit/main/content/posts/see-hardware-and-software-mitigation.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>Edit this page</span></a></div></div></footer><div class=book-comments><script src=https://utteranc.es/client.js repo=benmezger/blog label=comment issue-term=pathname theme=github-dark crossorigin=anonymous async></script></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#introduction>Introduction</a></li><li><a href=#background>Background</a></li><li><a href=#hardware-mitigation>Hardware Mitigation</a></li><li><a href=#software-mitigation>Software Mitigation</a></li><li><a href=#conclusions>Conclusions</a></li></ul></li><li><a href=#bibliography>Bibliography</a></li></ul></li></ul></nav></aside></main></body></html>

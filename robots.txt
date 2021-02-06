@@ -1,13 +1,29 @@
 User-agent: *
 
 
+Allow: /categories/blog/
+
+Allow: /categories/
+
+Allow: /tags/fault-tolerance/
+
+Allow: /tags/hardware/
+
+Allow: /posts/
+
+Allow: /tags/see/
+
+Allow: /tags/software/
+
+Allow: /posts/see-hardware-and-software-mitigation/
+
+Allow: /tags/
+
 Allow: /tags/mmu/
 
 Allow: /notes/notes_on_os_memory_management/
 
 Allow: /tags/os/
-
-Allow: /tags/
 
 Allow: /notes/bit_shifting/
 
@@ -55,17 +71,11 @@ Allow: /notes/git_change_commit_author/
 
 Allow: /posts/automating-and-testing-dotfiles/
 
-Allow: /categories/blog/
-
-Allow: /categories/
-
 Allow: /tags/ci/
 
 Allow: /tags/config/
 
 Allow: /tags/dotfiles/
-
-Allow: /posts/
 
 Allow: /tags/testing/
 
@@ -104,8 +114,6 @@ Allow: /tags/cs/
 Allow: /notes/methodologies/
 
 Allow: /tags/methodology/
-
-Allow: /tags/software/
 
 Allow: /notes/software_engineering/
 
