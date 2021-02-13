@@ -1,6 +1,14 @@
 User-agent: *
 
 
+Allow: /tags/c/
+
+Allow: /notes/c_pointers/
+
+Allow: /tags/programming/
+
+Allow: /tags/
+
 Allow: /categories/blog/
 
 Allow: /categories/
@@ -16,8 +24,6 @@ Allow: /tags/see/
 Allow: /tags/software/
 
 Allow: /posts/see-hardware-and-software-mitigation/
-
-Allow: /tags/
 
 Allow: /tags/mmu/
 
@@ -41,13 +47,9 @@ Allow: /tags/bibliography/
 
 Allow: /tags/research/
 
-Allow: /tags/c/
-
 Allow: /tags/methodologies/
 
 Allow: /notes/modeling_c_based_systems_with_uml/
-
-Allow: /tags/programming/
 
 Allow: /tags/checklist/
 
