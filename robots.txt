@@ -9,6 +9,10 @@ Allow: /tags/programming/
 
 Allow: /tags/
 
+Allow: /notes/awesome_operating_systems/
+
+Allow: /tags/os/
+
 Allow: /categories/blog/
 
 Allow: /categories/
@@ -28,8 +32,6 @@ Allow: /posts/see-hardware-and-software-mitigation/
 Allow: /tags/mmu/
 
 Allow: /notes/notes_on_os_memory_management/
-
-Allow: /tags/os/
 
 Allow: /notes/bit_shifting/
 
