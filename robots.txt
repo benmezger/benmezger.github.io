@@ -1,21 +1,23 @@
 User-agent: *
 
 
+Allow: /tags/compilers/
+
+Allow: /tags/riscv/
+
+Allow: /notes/symbol_format_elf64_littleriscv_unknown/
+
+Allow: /tags/
+
 Allow: /tags/c/
 
 Allow: /notes/c_pointers/
 
 Allow: /tags/programming/
 
-Allow: /tags/
-
 Allow: /notes/awesome_operating_systems/
 
 Allow: /tags/os/
-
-Allow: /categories/blog/
-
-Allow: /categories/
 
 Allow: /tags/fault-tolerance/
 
@@ -49,6 +51,10 @@ Allow: /tags/bibliography/
 
 Allow: /tags/research/
 
+Allow: /tags/computer/
+
+Allow: /notes/notes_on_risc_v_cpu_hard_ip_cores_enter_soc_fpgas/
+
 Allow: /tags/methodologies/
 
 Allow: /notes/modeling_c_based_systems_with_uml/
@@ -74,6 +80,10 @@ Allow: /tags/git/
 Allow: /notes/git_change_commit_author/
 
 Allow: /posts/automating-and-testing-dotfiles/
+
+Allow: /categories/blog/
+
+Allow: /categories/
 
 Allow: /tags/ci/
 
@@ -202,8 +212,6 @@ Allow: /tags/compiler/
 Allow: /notes/computer-architecture/
 
 Allow: /notes/riscv/
-
-Allow: /tags/riscv/
 
 Allow: /tags/thesis/
 
