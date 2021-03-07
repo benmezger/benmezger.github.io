@@ -1,13 +1,21 @@
 User-agent: *
 
 
+Allow: /tags/emacs/
+
+Allow: /notes/export_org_roam_backlinks_with_gohugo/
+
+Allow: /tags/orgmode/
+
+Allow: /tags/orgroam/
+
+Allow: /tags/
+
 Allow: /tags/compilers/
 
 Allow: /tags/riscv/
 
 Allow: /notes/symbol_format_elf64_littleriscv_unknown/
-
-Allow: /tags/
 
 Allow: /tags/c/
 
@@ -62,8 +70,6 @@ Allow: /notes/modeling_c_based_systems_with_uml/
 Allow: /tags/checklist/
 
 Allow: /notes/technical_challenge_checklist/
-
-Allow: /tags/emacs/
 
 Allow: /notes/emacs_search_and_replacing_versioned_controled_files/
 
@@ -156,10 +162,6 @@ Allow: /tags/toread/
 Allow: /notes/weed/
 
 Allow: /notes/org_roam/
-
-Allow: /tags/orgmode/
-
-Allow: /tags/orgroam/
 
 Allow: /tags/hugo/
 
